@@ -16,13 +16,15 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import { LayoutComponent } from './components/layout/layout.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BaseComponent,
     LogComponent,
-    LayoutComponent
+    LayoutComponent,
+    HomeComponent
   ],
 
   imports: [
