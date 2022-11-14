@@ -1,63 +1,97 @@
 <body>
   <form [formGroup]="cadForm" (ngSubmit)="submit()" #formDir="ngForm">
     <div class="container">
-
-      <div class="image">
-        <img src="../../../assets/Images/Preto e Cinza Giratório Legal e Moderno Logotipo de Computador (3).svg" alt="" />
-      </div>
-
-      <!--nome completo-->
-      <div class="Name">
-        <label for="Name"> </label>
-        <input id="Name" type="text" placeholder="Nome Completo" formControlName="Name" maxlength="55" minlength="6" />
-
-        <div *ngIf="Name.invalid && formDir.submitted" class="validation-error">
-          <p *ngIf="Name.errors?.['required']">
-            Preencha o campo corretamente
-          </p>
+      <!--formulario-->
+      <!--Nome completo-->
+      <div class="form-content">
+        <div class="logo"><img src="../../../assets/Images/Logo.png" alt="logo" class=logo />
         </div>
 
-        <!--cpf-->
-        <label for="Cpf"> </label>
-        <input id="cpf" type="text" placeholder="Cpf" formControlName="Cpf" maxlength="11" minlength="6" />
+        <div class="Name">
+          <div class="input-div">
+            <div class="i">
+              <mat-icon>assignment</mat-icon>
+              <input id="Name" type="text" placeholder="Nome Completo" formControlName="Name" maxlength="55"
+                minlength="6" />
+            </div>
+          </div>
 
-        <div *ngIf="Cpf.invalid && formDir.submitted" class="validation-error">
-          <p *ngIf="Cpf.errors?.['required']">
-            Preencha o campo de cpf corretamente
-          </p>
-        </div>
+          <!--validação do campo do nome completo-->
+          <div *ngIf="Name.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="Name.errors?.['required']">
+              Preencha o campo corretamente
+            </p>
+          </div>
 
-        <!--User Name-->
-        <div class="Username">
-          <label for="Username"> </label>
-          <input id="Username" type="text" placeholder="User" formControlName="Username" maxlength="10" />
+          <!--CPF-->
+          <div class="input-div">
+            <div class="i">
+              <mat-icon>fingerprint</mat-icon>
+              <input id="cpf" type="text" placeholder="Cpf" formControlName="Cpf" maxlength="11" minlength="6" />
 
+            </div>
+          </div>
+
+          <!--validação do campo do CPF-->
+          <div *ngIf="Cpf.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="Cpf.errors?.['required']">
+              Preencha o campo de cpf corretamente
+            </p>
+          </div>
+
+
+          <!--User Name-->
+          <div class="input-div">
+            <div class="i">
+              <mat-icon>perm_identity</mat-icon>
+              <input id="Username" type="text" placeholder="User" formControlName="Username" maxlength="10" />
+
+            </div>
+          </div>
+
+          <!--validação do campo do -->
           <div *ngIf="Username.invalid && formDir.submitted" class="validation-error">
             <p *ngIf="Username.errors?.['required']">
               Preencha o campo de user corretamente
             </p>
           </div>
 
-          <!--senha-->
-          <label for="Password"> </label>
-          <input id="Password" type="password" placeholder="Senha" formControlName="Password" maxlength="20"
-            minlength="6" />
 
+
+          <!--Password-->
+          <div class="input-div">
+            <div class="i">
+              <mat-icon>lock</mat-icon>
+              <input id="Password" type="password" placeholder="Senha" formControlName="Password" maxlength="20"
+                minlength="6" />
+            </div>
+          </div>
+
+          <!--validação do campo do -->
           <div *ngIf="Password.invalid && formDir.submitted" class="validation-error">
             <p *ngIf="Password.errors?.['required']">
               Preencha o campo de Senha corretamente
             </p>
           </div>
 
-          <!--Imagem-->
-          <label for="file"></label>
-            <span>Select Image</span>
-           <input id="File" type="file" placeholder="Imagem" /> 
-          
-           <button type="submit"> Enviar </button>
 
-         <a routerLink="../login" class="">Cancel</a> 
+          <!--File-->
+          <div class="input-div-file">
+            <div class="i">
+              <mat-icon>photo_camera</mat-icon>
+              <input class="file" type="file" />
+            </div>
+          </div>
+
+          <div class="btn">
+            <input type="submit" class="btn" value="enviar">
+          </div>
+
         </div>
+      </div>
+
+      <div class="ilustracao">
+        <img src="../../../assets/Images/pagecentral.png" alt="logo" />
       </div>
     </div>
   </form>

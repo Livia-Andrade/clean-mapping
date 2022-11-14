@@ -22,12 +22,13 @@ import { LayoutComponent } from './components/layout/layout.component';
     AppComponent,
     BaseComponent,
     LogComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
@@ -35,7 +36,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     MatButtonToggleModule,
     MatButtonModule, 
     MatSlideToggleModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

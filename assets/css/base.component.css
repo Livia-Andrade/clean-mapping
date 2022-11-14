@@ -1,1 +1,116 @@
-/*# sourceMappingURL=base.component.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container {
+  top: 10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /*criando 2 colunas com tamanho 1fr */
+  max-width: 900px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  position: cover;
+}
+
+.input-div:before,
+.input-div:after {
+  content: "";
+  bottom: -2px;
+  background-color: #38d39f;
+  transition: 0.4s;
+  float: left;
+}
+
+.input-div > div > input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #555;
+  font-family: "poppins", sans-serif;
+}
+
+.i {
+  color: #4F3B56;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-content .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20%;
+}
+
+.form-content .input-div-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  border: none;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.form-content .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border-radius: 15px;
+  border: none;
+  height: 20px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.form-content .btn input:hover {
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+}
+.container .ilustracao {
+  height: 100vh;
+  width: 100%;
+  transition: width 0.4s ease;
+  width: 400px;
+}
+
+img {
+  transition: width 0.4s ease;
+  width: 400px;
+}
+
+:hover img {
+  width: 400px;
+}
+
+.form-content img {
+  width: 150px;
+}/*# sourceMappingURL=base.component.css.map */
