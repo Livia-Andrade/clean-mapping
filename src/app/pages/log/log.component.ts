@@ -10,9 +10,6 @@ export class LogComponent implements OnInit {
 
   momentForm! : FormGroup;
 
-
-  constructor() { }
-
   ngOnInit(): void {
     this.momentForm = new FormGroup({
       id: new FormControl(''),

@@ -118,6 +118,24 @@ form {
   font-size: 15px;
 }
 
+.input-div:before {
+  right: 50%;
+}
+
+.input-div:after {
+  left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+  width: 50%;
+}
+
+.input-div.focus > div > h5 {
+  top: -5px;
+  font-size: 15px;
+}
+
 .input-div > div > input {
   left: 0;
   top: 0;
