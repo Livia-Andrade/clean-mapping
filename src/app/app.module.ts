@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< Updated upstream
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-=======
->>>>>>> Stashed changes
 
 import { BaseComponent } from './pages/base/base.component';
 import { LogComponent } from './pages/log/log.component';
@@ -23,7 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { matDialogAnimations, MatDialogModule } from '@angular/material/dialog';
 import { ElementDialogComponent } from './components/element-dialog/element-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     LayoutComponent,
     HomeComponent,
     ClientComponent,
-    ElementDialogComponent
+    ElementDialogComponent,
+    SidebarComponent
   ],
 
   imports: [
@@ -48,13 +47,12 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule, 
     MatSlideToggleModule,
     MatIconModule,
-<<<<<<< Updated upstream
-=======
+
     MatTableModule,
     MatDialogModule,
     MatFormFieldModule,
     FormsModule
->>>>>>> Stashed changes
+
   ],
   providers: [],
   bootstrap: [AppComponent]
