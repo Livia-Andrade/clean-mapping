@@ -73,33 +73,51 @@ body {
 
 //FILLE
 .form-content .input-div-file {
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 2px 0px;
+  font-family: 'poppins', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  border: none;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-  color: #fff;
+ 
+  
+}
+
+/* Esconde o input */
+input[type="file"] {
+  display: none;
 }
 
 //BOTTOM
 .form-content .btn {
+
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 2px 0px;
+  font-family: 'poppins', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  border-radius: 15px;
   border: none;
-  height: 20px;
-  margin: 10px 0;
+  outline: none;
+  height: 30px;
+  margin: 7px 0;
   transition: all 0.3s ease;
   letter-spacing: 1px;
-  color: #fff;
+
+  
 }
 
 .form-content .btn input:hover {
   /* transform: scale(0.99); */
+  background-position: right;
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
@@ -119,7 +137,7 @@ body {
 
 img {
   transition: width 0.4s ease;
-  width: 400px;
+  width: 300px;
 }
 
 :hover img {
