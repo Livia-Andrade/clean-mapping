@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,8 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatIconModule} from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ClientComponent } from './pages/client/client.component';
@@ -22,7 +23,7 @@ import { matDialogAnimations, MatDialogModule } from '@angular/material/dialog';
 import { ElementDialogComponent } from './components/element-dialog/element-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HomeComponent,
     ClientComponent,
     ElementDialogComponent,
-    SidebarComponent
+    SidebarComponent,
+    // FilterPipe
   ],
 
   imports: [
@@ -51,8 +53,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MatTableModule,
     MatDialogModule,
     MatFormFieldModule,
-    FormsModule
-
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
