@@ -1,1 +1,62 @@
-<p>layout works!</p>
+<body>
+
+  <mat-toolbar>
+    <mat-toolbar-row>
+        <span>Clean Mapping</span>
+        <span class="example-spacer"></span>
+      <button mat-button>
+        <button mat-button (click)="opened=!opened"><mat-icon>menu</mat-icon></button>
+  
+      </button>
+    </mat-toolbar-row>
+    
+  </mat-toolbar>
+  
+  <!--SIDEBAR-->
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+     <!--LOGO-->
+     <img class="logo" src="../../../assets/Images/Logo.png" alt="logo" />
+      <!--LINHA-->
+      <hr />
+      
+      <div class="ct-perfil">
+        <div class="avatar">
+          <img class="avatar mat-elevation-z0"
+            src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png"
+            style="width: 50px; border-radius: 100px; display: flex;">
+        </div>
+  
+        <div class="box">
+          <p class=" designation"> Welcome </p>
+          <h3 class="name"> Kleber Gelli </h3>
+  
+        </div>
+      </div>
+      <!--LINHA-->
+      <hr />
+
+        <!--MENU-->
+     <mat-list>
+        <!--Grenciamento de ambiente-->
+        <mat-list-item><a routerLink="/base"> <mat-icon name="i" style="color: #817f7f;">date_range</mat-icon>Ambiente</a></mat-list-item>
+        <!--Visualização de recursos -->
+        <mat-list-item><a routerLink="/base"> <mat-icon name="i" style="color:  #817f7f;">laptop</mat-icon>Recursos</a></mat-list-item>
+         <!--Gerenciamento de úsuarios-->
+        <mat-list-item><a routerLink="/client"> <mat-icon name="i" style="color:  #817f7f;">person</mat-icon>Úsuarios</a></mat-list-item>
+        <!--LINHA-->
+         <hr />
+        <mat-list-item><a routerLink="/base">Log out</a></mat-list-item>
+        <mat-list-item><a routerLink="/base"><mat-icon>brightness_4</mat-icon>Dark mode</a></mat-list-item>
+      </mat-list>
+  
+  
+    </mat-sidenav>
+    <mat-sidenav-container>
+      <button mat-button (click)="opened=!opened" ></button>
+      
+    </mat-sidenav-container>
+  </mat-sidenav-container>
+</body>
+
+
