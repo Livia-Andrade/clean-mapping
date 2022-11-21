@@ -1,6 +1,17 @@
 <div class="container">
-    <button mat-button style="color: rgb(79, 59, 86;" (click)="openDialog(null)">Add User </button>
+    <button mat-button style="background-color: rgb(79, 59, 86); color: white;" (click)="openDialog(null)">Add User </button>
 
+    
+    <div class="pesquisa">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Insira sua pesquisa</mat-label>
+            <input matInput placeholder="Ex. Ronaldo">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </p>
+      </div>
+      
     <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!-- Position Column -->
