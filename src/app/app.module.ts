@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ElementDialogComponent } from './components/element-dialog/element-dialog.component';
@@ -30,6 +32,9 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 
 
+
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +44,9 @@ import { LayoutComponent } from './components/layout/layout.component';
     ClientComponent,
     LayoutComponent,
     ElementDialogComponent,
+    ElementDialogComponent,
+    SidebarComponent,
+    // FilterPipe
   ],
 
   imports: [
@@ -63,7 +71,13 @@ import { LayoutComponent } from './components/layout/layout.component';
 
     //import do sidebar
     MatToolbarModule,
-    FormsModule 
+    FormsModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatProgressSpinnerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
