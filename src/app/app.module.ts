@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { ClientComponent } from './pages/client/client.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { MappingComponent } from './pages/mapping/mapping.component';
+import { EmployeeComponent } from './pages/mapping/employee/employee.component';
 
 
 
@@ -39,6 +41,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     ClientComponent,
     LayoutComponent,
     ElementDialogComponent,
+    MappingComponent,
+    EmployeeComponent,
   ],
 
   imports: [

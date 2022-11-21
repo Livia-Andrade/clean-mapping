@@ -1,31 +1,53 @@
-<h1  *ngIf="!isChange" mat-dialog-title>Adicionar novo usuario {{data.name}}</h1>
-<h1  *ngIf="isChange" mat-dialog-title>Editar usuario {{data.name}}</h1>
+<h1 *ngIf="!isChange" mat-dialog-title>
+  Adicionar novo usuario {{ data.name }}
+</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Editar usuario {{ data.name }}</h1>
 
 <div mat-dialog-content>
-  <mat-form-field appearance="fill" style="width: 100%;">
+  <mat-form-field appearance="fill" style="width: 100%">
     <mat-label> ID </mat-label>
-    <input matInput [(ngModel)]="data.position">
+    <input matInput [(ngModel)]="data.position" />
   </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
+  <mat-form-field appearance="fill" style="width: 100%">
     <mat-label> GRUPO </mat-label>
-    <input matInput [(ngModel)]="data.name">
+    <input matInput [(ngModel)]="data.name" />
   </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;" >
+  <mat-form-field appearance="fill" style="width: 100%">
     <mat-label> DESCRIÇÃO </mat-label>
-    <input matInput [(ngModel)]="data.description">
+    <input matInput [(ngModel)]="data.description" />
   </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%;">
+  <mat-form-field appearance="fill" style="width: 100%">
     <mat-label> OBSERVAÇÃO </mat-label>
-    <input matInput [(ngModel)]="data.symbol">
+    <input matInput [(ngModel)]="data.symbol" />
   </mat-form-field>
-
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button  *ngIf="!isChange"[mat-dialog-close]="data" cdkFocusInitial>Criar</button>
-  <button mat-button  *ngIf="isChange"[mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+  <button
+    mat-button
+    (click)="onCancel()"
+    style="background-color: rgb(141, 26, 26); color: aliceblue"
+  >
+    Cancel
+  </button>
+  <button
+    mat-button
+    *ngIf="!isChange"
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+    style="background-color: rgb(38, 100, 38); color: white"
+  >
+    Criar
+  </button>
+  <button
+    mat-button
+    *ngIf="isChange"
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+    style="background-color: rgb(38, 100, 38); color: white"
+  >
+    Editar
+  </button>
 </div>
-
