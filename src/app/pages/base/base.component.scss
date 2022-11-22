@@ -17,14 +17,14 @@ body {
 .container {
   top: 10;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   /*criando 2 colunas com tamanho 1fr */
   background-color: #fff;
-  padding: 25px 30px;
+  padding: 15px 15px 15px;
   border-radius: 5px 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   position: cover;
-
+  justify-content: center;
 }
 
 //FORMULARIO
@@ -88,6 +88,10 @@ input[type="file"] {
 
 //BOTTOM
 .form-content .btn {
+  width: 100%;
+}
+
+.form-content .btn {
 
   border-radius: 25px;
   color: #fff;
@@ -106,8 +110,7 @@ input[type="file"] {
   margin: 7px 0;
   transition: all 0.3s ease;
   letter-spacing: 1px;
-
-  
+  width: 100%;
 }
 
 .form-content .btn input:hover {
@@ -116,29 +119,27 @@ input[type="file"] {
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
-@media(max-width: 584px) {
-  .container {
-    max-width: 100%;
-  }
-}
 
 //IMAGEM PRINCIPAL
 .container .ilustracao {
   height: 100vh;
-  width: 100%;
   transition: width 0.4s ease;
-  width: 400px;
+  width: 100vh;
+ 
 }
 
 img {
   transition: width 0.4s ease;
   width: 300px;
+  height: 500px;
 }
 
 :hover img {
   width: 400px;
+  height: 500px;
 }
 
 .form-content img {
   width: 150px;
+  height: 300px;
 }
