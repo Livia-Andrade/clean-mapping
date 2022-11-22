@@ -11,13 +11,17 @@ export class EmployeeComponent implements OnInit {
   constructor(public service: EmployeeService) { }
 
   departments = [
-    {id: 3, value: 'Dep 1'},
-    {id: 2, value: 'Dep 2'},
-    {id: 3, value: 'Dep 3'}
+    {id: 3, value: 'Professor'},
+    {id: 2, value: 'Sala'},
+    {id: 3, value: 'Turma'}
   ]
   ngOnInit(): void {
   }
 
+  onClear(){
+    this.service.form.reset();
+    this.service.initializeFormGroup();
+  }
 
 
 }

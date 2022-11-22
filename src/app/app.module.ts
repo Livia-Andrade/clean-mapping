@@ -19,9 +19,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { matDatepickerAnimations, MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 //Componentes Pages
 
@@ -73,6 +75,9 @@ import { EmployeeService} from './shared/employee.service';
     MatRadioModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+
 
     //import do sidebar
     MatToolbarModule,

@@ -23,9 +23,9 @@
           </div>
 
           <div *ngIf="Login.invalid && formDir.submitted" class="validation-error">
-            <p *ngIf="Login.errors?.['required']">
+            <mat-error *ngIf="Login.errors?.['required']">
               Preencha o campo de Login corretamente
-            </p>
+            </mat-error>
           </div>
 
           <div class="input-div pass">
@@ -39,9 +39,9 @@
           </div>
 
           <div *ngIf="Password.invalid && formDir.submitted" class="validation-error">
-            <p *ngIf="Password.errors?.['required']">
+            <mat-error *ngIf="Password.errors?.['required']">
               Preencha o campo de Senha corretamente
-            </p>
+            </mat-error>
           </div>
 
           <a href="#">Forgot Password?</a>
