@@ -24,7 +24,7 @@ export class ElementDialogComponent implements OnInit {
     } else {
       this.isChange = false;
     }
-    this.dialogRef.updateSize('50%', '60%');
+    this.dialogRef.updateSize('50%', '50%');
   }
 
   onCancel(): void {
