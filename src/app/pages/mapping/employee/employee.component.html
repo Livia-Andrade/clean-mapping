@@ -1,6 +1,6 @@
 <body>
   <form [formGroup]="service.form" class="normal-form">
-    <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-list cols="2" rowHeight="600px">
       <mat-grid-tile>
         <div class="controles-container">
           <input type="hidden" formControlName="$key" />
@@ -28,16 +28,8 @@
       </mat-grid-tile>
       <mat-grid-tile>
         <div class="controles-container">
-          <!-- <div class="add-bottom-padding">
-            <mat-radio-group formControlName="gender">
-              <mat-radio-button value="1">Professor</mat-radio-button>
-              <mat-radio-button value="2">Sala</mat-radio-button>
-              <mat-radio-button value="3">Turma</mat-radio-button>
-            </mat-radio-group>
-          </div> -->
           <mat-form-field>
             <mat-select formControlName="department" placeholder="Grupo">
-              <mat-option>None</mat-option>
               <ng-container *ngFor="let department of departments">
                 <mat-option value="{{ department.id }}">{{
                   department.value
@@ -59,9 +51,9 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <div class="add-bottom-padding">
-            <mat-checkbox formControlName="isPermanent"
+            <!-- <mat-checkbox formControlName="isPermanent"
               >Permanente</mat-checkbox
-            >
+            > -->
           </div>
           <div class="button-row">
             <button

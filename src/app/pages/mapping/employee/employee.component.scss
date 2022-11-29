@@ -1,7 +1,23 @@
 body{
     font-family: 'Poppins', sans-serif;
 	overflow: hidden;
-	background-color: #F5F5F5;
+	// background-color: #F5F5F5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+form{
+    // border-top: 15px double #4F3B56;
+    // border-right: 15px double #4F3B56;
+    // border-left: 15px double #4F3B56;
+    // border-bottom: 15px double #4F3B56;
+    right: 0px;
+    top: 0px;
+    padding: 10px 15px 0 0;
 }
 
 .container{

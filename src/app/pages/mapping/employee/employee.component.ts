@@ -11,9 +11,11 @@ export class EmployeeComponent implements OnInit {
   constructor(public service: EmployeeService) { }
 
   departments = [
-    {id: 3, value: 'Professor'},
-    {id: 2, value: 'Sala'},
-    {id: 3, value: 'Turma'}
+    {id: 1, value: 'Ambiente'},
+    {id: 2, value: 'Docente'},
+    {id: 3, value: 'Diciplina'},
+    {id: 4, value: 'Equipamento'},
+    {id: 5, value: 'Turma'}
   ]
   ngOnInit(): void {
   }
