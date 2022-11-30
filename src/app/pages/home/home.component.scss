@@ -36,7 +36,7 @@ html, body {
 }
 
 .page-bg {
-  background:#C8C2FF;
+  background:$color-bg;
   background-blend-mode: screen;
   background-size: cover;
   // filter: grayscale(100%);
@@ -157,23 +157,21 @@ border: 4px solid #4f3b56;
 .button {
   display: inline-block;
   border-radius: 30px;
-  background-color: #4f3b56;
-  color: white;
-  // border-color: #929292;
-  // border: none;
+  background: linear-gradient(to right, #4f3b56, #b4e4d3);
+  color:#ffffff;
   border: 3px solid #4f3b56;
   text-align: center;
   font-size: 15px;
-  padding: 20px;
+  padding: 18px;
   width: 40%;
   transition: all 1.5s;
   cursor: pointer;
   margin: 25px;
+  
 }
 
 .button:hover {
-  color: #4f3b56;
-  background-color: #C8C2FF;
+  background-position: right;
 }
 
 .button span {
