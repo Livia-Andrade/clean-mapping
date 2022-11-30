@@ -1,4 +1,6 @@
 <body>
+
+
   <form [formGroup]="cadForm" (ngSubmit)="submit()" #formDir="ngForm">
     <div class="container">
       <!--formulario-->
@@ -85,8 +87,12 @@
           </div>
 
           <div class="btn">
-            <input type="submit" class="btn" value="enviar">
+            <button onclick="document.getElementById('sign-up-modal').style.display='block'" class="w3-button">Sign
+              Up</button>
           </div>
+          <!-- <div class="btn">
+            <input type="submit" class="btn" value="enviar">
+          </div> -->
 
         </div>
       </div>

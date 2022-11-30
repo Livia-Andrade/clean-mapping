@@ -1,7 +1,16 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration:none;
+}
+
+:root{
+  --background: #71b7e6;
+  --backgroundlinear: #9b59b6;
 }
 
 body {
@@ -12,6 +21,9 @@ body {
   justify-content: center;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
+
+
+
 
 //BORDA 
 .container {
@@ -28,7 +40,6 @@ body {
 }
 
 //FORMULARIO
-
 .input-div:before,
 .input-div:after {
   content: '';
@@ -90,33 +101,35 @@ input[type="file"] {
 
 
 .form-content .btn {
-
-  border-radius: 25px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 2px 0px;
-  font-family: 'poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  border: none;
-  outline: none;
-  height: 30px;
-  margin: 7px 0;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-  width:100%;
+  margin-top: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.form-content .btn input:hover {
-  /* transform: scale(0.99); */
+.form-content .btn button{
+  color: #38d39f;
+  border-radius: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin: 0 10px;
+  padding: 8px 15px 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.form-content .btn button:hover {
   background-position: right;
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  transition: 0.3s ease-in-out;
+  background: var(linear-gradiente(-135deg, #71b7e6, #9b59b6));
 }
 
+.form-content .btn button:first-child:hover{
+  color: var(--background) !important;
+  transition: 0.3s ease-in-out;
+  background: var(--backgroundlinear) !important;
+}
 
 //IMAGEM PRINCIPAL
 .container .ilustracao {
