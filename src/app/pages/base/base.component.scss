@@ -8,38 +8,34 @@ a {
   text-decoration:none;
 }
 
+
+
 :root{
   --background: #71b7e6;
   --backgroundlinear: #9b59b6;
 }
 
-body {
+body{
   overflow: hidden;
-  height: 100vh;
-  display: flex;
-  padding: 20px;
   justify-content: center;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-
-
-
-//BORDA 
 .container {
-  top: 10;
+  position: cover;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /*criando 2 colunas com tamanho 1fr */
-  background-color: #fff;
-  padding: 15px 15px 15px;
-  border-radius: 5px 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  position: cover;
-  justify-content: center;
+  gap: 2rem;
 }
 
-//FORMULARIO
+///////////---------LOGO
+.form-content .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20%;
+}
+
+///////////---------FORMULARIO
 .input-div:before,
 .input-div:after {
   content: '';
@@ -47,6 +43,7 @@ body {
   background-color: #38d39f;
   transition: .4s;
   float: left;
+  grid-column: 1/ -1;
 }
 
 .input-div>div>input {
@@ -58,9 +55,7 @@ body {
   font-family: 'poppins', sans-serif;
 }
 
-
-
-//ICONES
+///////////---------ICONES
 .i {
   color: #4F3B56;
   display: flex;
@@ -68,47 +63,36 @@ body {
   align-items: center;
 }
 
-//LOGO
-
-.form-content .logo{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 20%;
-}
-
 //FILLE
-.form-content .input-div-file {
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 2px 0px;
-  font-family: 'poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
-  
-}
+// .form-content .input-div-file {
+//   border-radius: 5px;
+//   color: #555;
+//   cursor: pointer;
+//   margin: 10px;
+//   padding: 2px 0px;
+//   font-family: 'poppins', sans-serif;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   float: left;
+// }
+
 
 /* Esconde o input */
 input[type="file"] {
   display: none;
 }
 
-//BOTTOM
-
-
+///////////---------BOTTOM
 .form-content .btn {
   margin-top: 20px;
   display:flex;
   align-items:center;
   justify-content:center;
+  background: var(linear-gradiente(-135deg, #71b7e6, #9b59b6));
 }
 
 .form-content .btn button{
-  color: #38d39f;
   border-radius: 15px;
   font-weight: 900;
   text-transform: uppercase;
@@ -116,41 +100,59 @@ input[type="file"] {
   font-size: 12px;
   margin: 0 10px;
   padding: 8px 15px 6px;
-  transition: 0.3s ease-in-out;
 }
 
 .form-content .btn button:hover {
-  background-position: right;
   transition: 0.3s ease-in-out;
-  background: var(linear-gradiente(-135deg, #71b7e6, #9b59b6));
 }
 
-.form-content .btn button:first-child:hover{
-  color: var(--background) !important;
-  transition: 0.3s ease-in-out;
-  background: var(--backgroundlinear) !important;
-}
-
-//IMAGEM PRINCIPAL
+///////////---------IMAGEM PRINCIPAL
 .container .ilustracao {
   height: 100vh;
-  transition: width 0.4s ease;
   width: 100vh;
- 
-}
-
-img {
   transition: width 0.4s ease;
-  width: 300px;
-  height: 500px;
+  object-fit:cover
 }
 
-:hover img {
-  width: 400px;
-  height: 500px;
+///////////---------RESPONSIVIDADE--------/////////
+
+//Laptops, desktops
+@media(min-width: 1025px) and (max-width:1280px){
+  div{
+    grid-template-columns: 1fr;
+  }
+  .container {
+		grid-gap: 5rem;
+	}
 }
 
-.form-content img {
-  width: 150px;
-  height: 300px;
+
+///////////---------Tablets, ipads
+@media(min-width: 768px) , (max-width:1024px){
+  div{
+    grid-template-columns: 1fr;
+  }
+  form {
+		width: 290px;
+	}
+
+}
+
+///////////---------Tablets de baixa resolução,celulares
+@media(min-width: 481px) and (max-width:767px) {
+  div{
+    grid-template-columns: 1fr;
+  }
+  form {
+		width: 290px;
+	}
+	.img img {
+		width: 400px;
+	}
+}
+
+
+///////////---------a maioria dos smarthphones móveis 
+@media(min-width: 302px) and (max-width:480px){
+
 }
