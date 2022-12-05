@@ -25,6 +25,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule} from '@angular/material/core';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule} from '@angular/material/paginator';
+import { DataSource } from '@angular/cdk/table';
+
 
 //Componentes Pages
 
@@ -37,6 +39,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MappingComponent } from './pages/mapping/mapping.component';
 import { EmployeeComponent } from './pages/mapping/employee/employee.component';
 import { EmployeeService} from './shared/employee.service';
+import { LayoutModule } from '@angular/cdk/layout';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -78,11 +82,11 @@ import { EmployeeService} from './shared/employee.service';
     MatNativeDateModule,
     MatCheckboxModule,
     MatPaginatorModule,
-
-
+    HttpClientModule,
     //import do sidebar
     MatToolbarModule,
-    FormsModule 
+    FormsModule,
+    LayoutModule 
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
