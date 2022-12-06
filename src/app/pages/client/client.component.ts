@@ -9,13 +9,14 @@ export interface PeriodicElement {
   position: number;
   description: string;
   symbol: string;
+  password: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Kleber', description: 'Professor', symbol: 'Backend' },
-  { position: 2, name: 'João', description: 'Professor', symbol: 'Banco de dados' },
-  { position: 3, name: 'Ronaldo', description: 'Professor', symbol: 'Frontend' },
-  { position: 4, name: 'Airton', description: 'Professor', symbol: 'Sistemas Operacionais' },
+  { position: 1, name: 'Kleber', description: 'Professor', symbol: 'Backend', password: '123' },
+  { position: 2, name: 'João', description: 'Professor', symbol: 'Banco de dados', password: '123' },
+  { position: 3, name: 'Ronaldo', description: 'Professor', symbol: 'Frontend', password: '123' },
+  { position: 4, name: 'Airton', description: 'Professor', symbol: 'Sistemas Operacionais', password: '123' },
 ];
 
 
@@ -27,7 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ClientComponent implements OnInit {
   @ViewChild(MatTable)
   table!: MatTable<any>;
-  displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'action'];
+  displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'password', 'action'];
   dataSource = ELEMENT_DATA;
 
   constructor(public dialog: MatDialog) { }
