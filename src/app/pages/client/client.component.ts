@@ -4,6 +4,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 
 
+
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -13,10 +15,14 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Kleber', description: 'Professor', symbol: 'Backend', password: '123' },
-  { position: 2, name: 'João', description: 'Professor', symbol: 'Banco de dados', password: '123' },
-  { position: 3, name: 'Ronaldo', description: 'Professor', symbol: 'Frontend', password: '123' },
-  { position: 4, name: 'Airton', description: 'Professor', symbol: 'Sistemas Operacionais', password: '123' },
+  { position: 1, name: 'Kleber', description: 'KGE', symbol: '875.515.590-19', password: '123' },
+  { position: 2, name: 'João', description: 'Juninho', symbol: '179.508.460-03', password: '321' },
+  { position: 3, name: 'Ronaldo', description: 'Vaqueli', symbol: '644.956.400-89', password: '456' },
+  { position: 4, name: 'Airton', description: 'Zambotti', symbol: '336.539.740-03', password: '789' },
+  { position: 5, name: 'Kaylane', description: 'Coelho', symbol: '875.515.590-19', password: '123' },
+  { position: 6, name: 'Livia', description: 'Andrade', symbol: '179.508.460-03', password: '321' },
+  { position: 7, name: 'Kailaine', description: 'Naiara', symbol: '644.956.400-89', password: '456' },
+  { position: 8, name: 'Renan', description: 'Mesquita', symbol: '336.539.740-03', password: '789' },
 ];
 
 
@@ -30,6 +36,7 @@ export class ClientComponent implements OnInit {
   table!: MatTable<any>;
   displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'password', 'action'];
   dataSource = ELEMENT_DATA;
+
 
   constructor(public dialog: MatDialog) { }
 
@@ -72,6 +79,7 @@ export class ClientComponent implements OnInit {
   deleteElement(position: number): void {
     this.dataSource = this.dataSource.filter(p => p.position !== position);
   }
+  
 }
 
 

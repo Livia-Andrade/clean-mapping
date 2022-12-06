@@ -1,0 +1,66 @@
+<h1 *ngIf="!isChange" mat-dialog-title>
+    Adicionar novo recurso {{ data.name }}
+  </h1>
+  <h1 *ngIf="isChange" mat-dialog-title>Editar recurso {{ data.name }}</h1>
+  
+  <div mat-dialog-content>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Selecione o recurso </mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="option1">Ambiente</mat-option>
+        <mat-option value="option2">Diciplina</mat-option>
+        <mat-option value="option3">Docente</mat-option>
+        <mat-option value="option4">Equipamento</mat-option>
+        <mat-option value="option5">Turma</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label> ID </mat-label>
+      <input matInput [(ngModel)]="data.position" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label> NOME </mat-label>
+      <input matInput [(ngModel)]="data.name" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label> NÚMERO </mat-label>
+      <input matInput [(ngModel)]="data.number" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label> OBSERVAÇÃO </mat-label>
+      <input matInput [(ngModel)]="data.symbol" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      (click)="onCancel()"
+      style="background-color: rgb(141, 26, 26); color: aliceblue"
+    >
+      Cancel
+    </button>
+    <button
+      mat-button
+      *ngIf="!isChange"
+      [mat-dialog-close]="data"
+      cdkFocusInitial
+      style="background-color: rgb(38, 100, 38); color: white"
+    >
+      Criar
+    </button>
+    <button
+      mat-button
+      *ngIf="isChange"
+      [mat-dialog-close]="data"
+      cdkFocusInitial
+      style="background-color: rgb(38, 100, 38); color: white"
+    >
+      Editar
+    </button>
+  </div>
+  

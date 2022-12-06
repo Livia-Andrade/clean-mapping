@@ -26,7 +26,7 @@ import { MatNativeDateModule} from '@angular/material/core';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 //Componentes Pages
 
 import { BaseComponent } from './pages/base/base.component';
@@ -35,10 +35,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { ClientComponent } from './pages/client/client.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { MappingComponent } from './pages/mapping/mapping.component';
-import { EmployeeComponent } from './pages/mapping/employee/employee.component';
-import { EmployeeService} from './shared/employee.service';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MappingComponent } from './pages/mapping/mapping.component';
+import { ElementDialogMappingComponent } from './components/element-dialog-mapping/element-dialog-mapping.component';
+
+
 
 
 
@@ -52,7 +53,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutComponent,
     ElementDialogComponent,
     MappingComponent,
-    EmployeeComponent,
+    ElementDialogMappingComponent,
   ],
 
   imports: [
@@ -81,13 +82,14 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatCheckboxModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
     
     //import do sidebar
     MatToolbarModule,
     FormsModule,
     LayoutModule 
   ],
-  providers: [EmployeeService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

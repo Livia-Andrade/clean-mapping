@@ -1,5 +1,3 @@
-
-
 /* Config */
 $color-bg: #4f3b56;
 $color-particle: #fff;
@@ -114,6 +112,7 @@ html, body {
   z-index: 2;
 }
 
+
 table {
     width: 100%;
     text-align: center;
@@ -147,4 +146,10 @@ body{
     height: 100%;
     position: absolute;
     background-color: #F5F5F5;
+ }
+
+ .loader-container{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
  }
