@@ -38,6 +38,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MappingComponent } from './pages/mapping/mapping.component';
 import { ElementDialogMappingComponent } from './components/element-dialog-mapping/element-dialog-mapping.component';
+import { ContextComponent } from './pages/context/context.component';
 
 
 
@@ -54,6 +55,7 @@ import { ElementDialogMappingComponent } from './components/element-dialog-mappi
     ElementDialogComponent,
     MappingComponent,
     ElementDialogMappingComponent,
+    ContextComponent,
   ],
 
   imports: [
