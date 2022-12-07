@@ -23,6 +23,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 6, name: 'Livia', description: 'Andrade', symbol: '179.508.460-03', password: '321' },
   { position: 7, name: 'Kailaine', description: 'Naiara', symbol: '644.956.400-89', password: '456' },
   { position: 8, name: 'Renan', description: 'Mesquita', symbol: '336.539.740-03', password: '789' },
+  { position: 9, name: 'Julia', description: 'Julinha', symbol: '644.956.400-89', password: '456' },
+  { position: 10, name: 'Leandro', description: 'Leandrinho', symbol: '336.539.740-03', password: '789' },
 ];
 
 
@@ -79,7 +81,7 @@ export class ClientComponent implements OnInit {
   deleteElement(position: number): void {
     this.dataSource = this.dataSource.filter(p => p.position !== position);
   }
-  
+
 }
 
 

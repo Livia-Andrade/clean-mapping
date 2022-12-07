@@ -22,11 +22,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule} from '@angular/material/core';
-import { MatCheckboxModule} from '@angular/material/checkbox';
-import { MatPaginatorModule} from '@angular/material/paginator';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { matTooltipAnimations, MatTooltipModule } from '@angular/material/tooltip';
 //Componentes Pages
 
 import { BaseComponent } from './pages/base/base.component';
@@ -67,7 +68,7 @@ import { ContextComponent } from './pages/context/context.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonToggleModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatSlideToggleModule,
     MatIconModule,
     MatTableModule,
@@ -85,11 +86,12 @@ import { ContextComponent } from './pages/context/context.component';
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    
+    MatTooltipModule,
+
     //import do sidebar
     MatToolbarModule,
     FormsModule,
-    LayoutModule 
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

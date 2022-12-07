@@ -6,6 +6,7 @@ import { ElementDialogMappingComponent } from 'src/app/components/element-dialog
 
 
 export interface PeriodicElement {
+  recurso: string;
   position: number;
   name: string;
   number: string;
@@ -16,14 +17,16 @@ export interface PeriodicElement {
 //ID, NOME, NÚMERO, OBSERVAÇÃO 
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 2, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 3, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 4, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 5, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 6, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 7, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { position: 8, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 1, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 2, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 3, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 4, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 5, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 6, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 7, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 8, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 9, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso:'Equipamento', position: 10, name: 'Maquina', number: '9', symbol: 'Funcionando' },
 ];
 
 
@@ -36,7 +39,7 @@ export class MappingComponent implements OnInit {
 
   @ViewChild(MatTable)
   table!: MatTable<any>;
-  displayedColumns: string[] = ['position', 'name', 'number', 'symbol', 'action'];
+  displayedColumns: string[] = ['position','recurso', 'name', 'number', 'symbol', 'action'];
   dataSource = ELEMENT_DATA;
 
   constructor(public dialog: MatDialog) { }
@@ -48,11 +51,13 @@ export class MappingComponent implements OnInit {
     const dialogRef = this.dialog.open(ElementDialogMappingComponent, {
       width: '250px',
       data: element == null ? {
+        recurso: null,
         position: null,
         name: '',
         number: null,
         symbol: ''
       } : {
+        recurso: element.recurso,
         position: element.position,
         name: element.name,
         number: element.number,

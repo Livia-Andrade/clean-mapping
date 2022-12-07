@@ -40,6 +40,12 @@ BACKGROUND DA PÁGINA  -->
       <td mat-cell *matCellDef="let element"> {{element.position}} </td>
     </ng-container>
 
+    <!-- RECURSO -->
+    <ng-container matColumnDef="recurso">
+      <th mat-header-cell *matHeaderCellDef> RECURSO </th>
+      <td mat-cell *matCellDef="let element"> {{element.recurso}} </td>
+    </ng-container>
+
     <!-- NOME -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> NOME </th>
@@ -77,6 +83,6 @@ BACKGROUND DA PÁGINA  -->
 
   </table>
 
-  <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]">
+  <mat-paginator class="mat-elevation-z2" #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]" style="background-color: #B4E4D3;">
   </mat-paginator>
 </div>

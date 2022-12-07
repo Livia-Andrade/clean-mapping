@@ -5,9 +5,15 @@
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
 	overflow: hidden;
-	background-color: #F5F5F5;
+}
+
+.example-button{
+	border: none;
+	color: rgb(160, 7, 7);
+	width: 15px;
+	background-color: white;
+	cursor: pointer;
 }
 
 .container {
@@ -71,9 +77,6 @@ form {
 	align-items: center;
 }
 
-.i i {
-	transition: .3s;
-}
 
 .input-div>div {
 	position: relative;
@@ -160,18 +163,6 @@ form {
 	margin-bottom: 4px;
 }
 
-a {
-	display: block;
-	text-align: right;
-	text-decoration: none;
-	color: #999;
-	font-size: 0.9rem;
-	transition: .3s;
-}
-
-a:hover {
-	color: #B4E4D3;
-}
 
 .btn {
 	display: block;

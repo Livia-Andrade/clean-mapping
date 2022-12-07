@@ -75,7 +75,7 @@ BACKGROUND DA PÁGINA  -->
           <mat-icon>delete</mat-icon>
         </button>
       </td>
-      
+
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -84,6 +84,7 @@ BACKGROUND DA PÁGINA  -->
   </table>
 
 
-  <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]">
+  <mat-paginator class="mat-elevation-z2" #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]"
+    style="background-color: #4f3b56; color: white;">
   </mat-paginator>
 </div>

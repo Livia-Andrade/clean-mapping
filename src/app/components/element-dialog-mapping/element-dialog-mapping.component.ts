@@ -11,7 +11,7 @@ import { ElementDialogComponent } from '../element-dialog/element-dialog.compone
 export class ElementDialogMappingComponent implements OnInit {
   element!: PeriodicElement;
   isChange!: boolean;
-  selected = 'option2';
+  selected = '';
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
