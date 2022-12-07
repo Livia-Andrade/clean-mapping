@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from './pages/base/base.component';
 import { LogComponent } from './pages/log/log.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { ContextComponent } from './pages/context/context.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'client', component: ClientComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'mapping', component: MappingComponent},
+  { path: 'context', component: ContextComponent},
 
   // { path: '', Component: LogoutComponent},  --> CRIA COMPONENT LOGOUT
 
