@@ -14,7 +14,14 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'client', component: ClientComponent },
   { path: 'layout', component: LayoutComponent },
-  { path: 'mapping', component: MappingComponent}
+  { path: 'mapping', component: MappingComponent},
+
+  // { path: '', Component: LogoutComponent},  --> CRIA COMPONENT LOGOUT
+
+  
+
+  // { path: '**', component: ErrorComponent }, --> CRIA COMPONENT ERRO
+  // Lembre-se de deixar o scape da rota sempre como último
 ];
 
 @NgModule({
