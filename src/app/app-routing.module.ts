@@ -9,6 +9,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'log'},
   { path: 'base', component: BaseComponent },
   { path: 'log', component: LogComponent },
   { path: 'home', component: HomeComponent },

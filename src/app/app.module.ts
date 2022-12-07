@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 //Imports 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -83,7 +84,8 @@ import { ElementDialogMappingComponent } from './components/element-dialog-mappi
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    
+    HttpClientModule,
+
     //import do sidebar
     MatToolbarModule,
     FormsModule,
