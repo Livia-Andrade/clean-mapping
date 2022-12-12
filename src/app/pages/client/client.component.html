@@ -88,9 +88,10 @@ BACKGROUND DA PÁGINA  -->
     <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]">
     </mat-paginator>
   </div>
-  <ng-template #loading>
+  <ng-template #loading class="mat-elevation-z8">
     <div class="loadSpinner">
-      <mat-spinner></mat-spinner>
+      <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+      </mat-progress-spinner>
     </div>
   </ng-template>
 

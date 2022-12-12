@@ -3,8 +3,10 @@ import { ElementDialogComponent } from './../../components/element-dialog/elemen
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { ClientService } from 'src/app/services/client.service';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/delay';
+import { catchError, Observable } from 'rxjs';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+/*import 'rxjs/add/operator/delay';*/
 
 
 export interface PeriodicElement {
@@ -41,10 +43,14 @@ export class ClientComponent implements OnInit {
   // PeriodicElement = ELEMENT_DATA;
   // clientService: ClientService;
 
+  // spinner
+  color: ThemePalette = 'accent';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
 
   constructor(private clientService: ClientService, public dialog: MatDialog) {
     // this.clientService = new ClientService();
-    this.PeriodicElement$ = this.clientService.listar();
+    this.PeriodicElement$ = this.clientService.listar().pipe(catchError());
    }
 
   ngOnInit(): void {

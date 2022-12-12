@@ -14,7 +14,7 @@ export class ClientService {
   constructor(private httpClient: HttpClient) { }
 
   listar() {
-    return this.httpClient.get<PeriodicElement[]>(this.api).pipe(delay(5000));
+    return this.httpClient.get<PeriodicElement[]>(this.api).pipe(delay(2500));
   }
 
 }
