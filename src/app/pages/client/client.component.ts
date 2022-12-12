@@ -3,9 +3,10 @@ import { ElementDialogComponent } from './../../components/element-dialog/elemen
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { ClientService } from 'src/app/services/client.service';
-import { catchError, Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.component';
 /*import 'rxjs/add/operator/delay';*/
 
 
@@ -34,6 +35,7 @@ export interface PeriodicElement {
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.scss']
 })
+
 export class ClientComponent implements OnInit {
 
   PeriodicElement$: Observable<PeriodicElement[]>;
@@ -50,10 +52,23 @@ export class ClientComponent implements OnInit {
 
   constructor(private clientService: ClientService, public dialog: MatDialog) {
     // this.clientService = new ClientService();
-    this.PeriodicElement$ = this.clientService.listar().pipe(catchError());
+    this.PeriodicElement$ = this.clientService.listar().pipe(catchError(error => {
+      this.onError('Erro ao carregar.');
+      return of([]) 
+    }));
    }
 
   ngOnInit(): void {
+  }
+
+  onError(erroMsg: string) {
+    this.dialog.open(ErrorDialogComponent , {
+      data: erroMsg
+    });
+  }
+
+  onAdd(){
+    console.log(this.onAdd);
   }
 
   openDialog(element: PeriodicElement | null): void {

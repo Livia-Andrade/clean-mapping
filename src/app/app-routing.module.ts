@@ -8,6 +8,7 @@ import { LogComponent } from './pages/log/log.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'log'},
   { path: 'base', component: BaseComponent },

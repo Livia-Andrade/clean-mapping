@@ -23,11 +23,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule} from '@angular/material/core';
-import { MatCheckboxModule} from '@angular/material/checkbox';
-import { MatPaginatorModule} from '@angular/material/paginator';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 //Componentes Pages
 
 import { BaseComponent } from './pages/base/base.component';
@@ -39,6 +39,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MappingComponent } from './pages/mapping/mapping.component';
 import { ElementDialogMappingComponent } from './components/element-dialog-mapping/element-dialog-mapping.component';
+import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
 
 
 
@@ -55,8 +56,8 @@ import { ElementDialogMappingComponent } from './components/element-dialog-mappi
     ElementDialogComponent,
     MappingComponent,
     ElementDialogMappingComponent,
+    ErrorDialogComponent,
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -66,7 +67,7 @@ import { ElementDialogMappingComponent } from './components/element-dialog-mappi
     MatFormFieldModule,
     MatInputModule,
     MatButtonToggleModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatSlideToggleModule,
     MatIconModule,
     MatTableModule,
@@ -89,7 +90,7 @@ import { ElementDialogMappingComponent } from './components/element-dialog-mappi
     //import do sidebar
     MatToolbarModule,
     FormsModule,
-    LayoutModule 
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
