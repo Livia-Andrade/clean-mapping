@@ -42,7 +42,7 @@ export class ClientComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
 
-  constructor(public dialog: MatDialog, private layout: LayoutComponent, private router: Router) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
