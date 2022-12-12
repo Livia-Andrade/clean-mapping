@@ -1,62 +1,91 @@
-<body>
+<!-- Parte de cima do Sidebar  -->
+<mat-toolbar>
 
-  <mat-toolbar>
-    <mat-toolbar-row>
-        <span>Clean Mapping</span>
-        <span class="example-spacer"></span>
-      <button mat-button>
-        <button mat-button (click)="opened=!opened"><mat-icon>menu</mat-icon></button>
-  
-      </button>
-    </mat-toolbar-row>
-    
-  </mat-toolbar>
-  
-  <!--SIDEBAR-->
-  <mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="side">
-     <!--LOGO-->
-     <img class="logo" src="../../../assets/Images/Logo.png" alt="logo" />
-      <!--LINHA-->
-      <hr />
-      
-      <div class="ct-perfil">
-        <div class="avatar">
-          <img class="avatar mat-elevation-z0 "
-            src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt=""
-            style="width: 50px; border-radius: 100px; display: flex;">
-        </div>
-  
-        <div class="box">
-          <p class=" designation"> Welcome </p>
-          <h3 class="name"> Kleber Gelli </h3>
-  
-        </div>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+
+  <button mat-button class="menu-button">
+    <mat-icon>exit_to_app</mat-icon>
+    <span> </span>
+  </button>
+</mat-toolbar>
+
+
+<!-- Configuração de todas as pastes do Sidebar -->
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav="matSidenav">
+
+    <img class="avatar mat-elevation-z0" src="../../../assets/Images/Logo.png"
+      style="width:120px; text-align: center; margin-left: 35px ;">
+
+    <mat-divider></mat-divider>
+
+    <div class="ct-perfil">
+      <div class="avatar">
+        <img class="avatar mat-elevation-z0"
+          src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png"
+          style="width: 50px; border-radius: 100px; display: flex;">
       </div>
-      <!--LINHA-->
-      <hr />
 
-        <!--MENU-->
-     <mat-list>
-        <!--Grenciamento de ambiente-->
-        <mat-list-item><a routerLink="/base"> <mat-icon name="i" style="color: #817f7f;">date_range</mat-icon>Ambiente</a></mat-list-item>
-        <!--Visualização de recursos -->
-        <mat-list-item><a routerLink="/base"> <mat-icon name="i" style="color:  #817f7f;">laptop</mat-icon>Recursos</a></mat-list-item>
-         <!--Gerenciamento de úsuarios-->
-        <mat-list-item><a routerLink="/client"> <mat-icon name="i" style="color:  #817f7f;">person</mat-icon>Úsuarios</a></mat-list-item>
-        <!--LINHA-->
-         <hr />
-        <mat-list-item><a routerLink="/base">Log out</a></mat-list-item>
-        <mat-list-item><a routerLink="/base"><mat-icon>brightness_4</mat-icon>Dark mode</a></mat-list-item>
-      </mat-list>
-  
-  
-    </mat-sidenav>
-    <mat-sidenav-container>
-      <button mat-button (click)="opened=!opened" ></button>
-      
-    </mat-sidenav-container>
-  </mat-sidenav-container>
-</body>
+      <div class="box">
+        <p class=" designation"> Welcome </p>
+        <h3 class="name"> Kleber Gelli </h3>
+
+      </div>
+    </div>
+    <mat-divider></mat-divider>
 
 
+    <!-- <button mat-button class="menu-button">
+      <mat-icon>message</mat-icon>
+      <span> Chat </span>
+    </button> -->
+
+    <button mat-button class="menu-button">
+      <mat-icon>event</mat-icon>
+      <span routerLink=""> Mapeamento </span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon>computer</mat-icon>
+      <span routerLink="/mapping"> Recursos </span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span routerLink="client"> Usuarios </span>
+    </button>
+    <!-- <button mat-button class="menu-button">
+      <mat-icon>notifications_active</mat-icon>
+      <span> Notificações </span>
+    </button> -->
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>brightness_4</mat-icon>
+      <span> Tema </span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon></mat-icon>
+      <span> </span>
+    </button>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

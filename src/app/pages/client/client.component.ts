@@ -2,6 +2,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ElementDialogComponent } from './../../components/element-dialog/element-dialog.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
+import { LayoutComponent } from 'src/app/components/layout/layout.component';
+import { Router } from '@angular/router';
 
 
 
@@ -40,7 +42,7 @@ export class ClientComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private layout: LayoutComponent, private router: Router) { }
 
   ngOnInit(): void {
   }
