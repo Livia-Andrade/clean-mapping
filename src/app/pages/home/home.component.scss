@@ -149,7 +149,7 @@ body {
 
 .cor {
   background-color: #fff;
-  margin: 5% 15%;
+  margin: 3.5% 15% ;
   border-radius: 50px 0px 50px 0px;
   border: 4px solid #4f3b56;
 }
@@ -206,5 +206,12 @@ body {
 
   .button {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .cor {
+    position: relative;
+    top: 4%;
   }
 }
