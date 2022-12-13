@@ -33,9 +33,9 @@ import { matTooltipAnimations, MatTooltipModule } from '@angular/material/toolti
 //import for calendar
 import { CommonModule } from '@angular/common';
 // import { FlatpickrModule } from 'angularx-flatpickr';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+// import { CalendarModule, DateAdapter } from 'angular-calendar';
+// import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+// import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Componentes Pages
 
@@ -44,12 +44,12 @@ import { LogComponent } from './pages/log/log.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { ClientComponent } from './pages/client/client.component';
-import { LayoutComponent } from './components/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MappingComponent } from './pages/mapping/mapping.component';
 import { ElementDialogMappingComponent } from './components/element-dialog-mapping/element-dialog-mapping.component';
-import { ContextComponent } from './pages/context/context.component';
+// import { ContextComponent } from './pages/context/context.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { NavigationMappingComponent } from './components/navigation-mapping/navigation-mapping.component';
 
 
 
@@ -62,12 +62,12 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     LogComponent,
     HomeComponent,
     ClientComponent,
-    LayoutComponent,
     ElementDialogComponent,
     MappingComponent,
     ElementDialogMappingComponent,
-    ContextComponent,
+    // ContextComponent,
     NavigationComponent,
+    NavigationMappingComponent,
   ],
 
   imports: [
@@ -100,19 +100,19 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     MatTooltipModule,
 
     //import calendar
-    CommonModule,
-    FormsModule,
-    NgbModalModule,
+    // CommonModule,
+    // FormsModule,
+    // NgbModalModule,
     // FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
+    // CalendarModule.forRoot({
+    //   provide: DateAdapter,
+    //   useFactory: adapterFactory,
+    // }),
 
     //import sidebar
     MatToolbarModule,
     FormsModule,
-    LayoutModule
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
