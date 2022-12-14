@@ -8,6 +8,7 @@ import { BaseComponent } from './pages/base/base.component';
 import { LogComponent } from './pages/log/log.component';
 // import { ContextComponent } from './pages/context/context.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { NavigationBaseComponent } from './components/navigation-base/navigation-base.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'mapping', component: MappingComponent},
   // { path: 'context', component: ContextComponent},
   { path: 'navigation', component: NavigationComponent},
-  { path: 'navigation-mapping', component: NavigationMappingComponent}
+  { path: 'navigation-mapping', component: NavigationMappingComponent},
+  { path: 'navigation-base', component: NavigationBaseComponent}
 
   // { path: '', Component: LogoutComponent},  --> CRIA COMPONENT LOGOUT
 

@@ -1,158 +1,133 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-a {
-  text-decoration:none;
+body {
+	overflow: hidden;
 }
 
-
-
-:root{
-  --background: #71b7e6;
-  --backgroundlinear: #9b59b6;
-}
-
-body{
-  overflow: hidden;
-  justify-content: center;
+.example-button{
+	border: none;
+	color: rgb(160, 7, 7);
+	width: 15px;
+	background-color: white;
+	cursor: pointer;
 }
 
 .container {
-  position: cover;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+	width: 95vw;
+	height: 89vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 7rem;
+	padding: 0 2rem;
 }
 
-///////////---------LOGO
-.form-content .logo{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 20%;
+.img {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
-///////////---------FORMULARIO
-.input-div:before,
-.input-div:after {
-  content: '';
-  bottom: -2px;
-  background-color: #38d39f;
-  transition: .4s;
-  float: left;
-  grid-column: 1/ -1;
+.login-content {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
 }
 
-.input-div>div>input {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: none;
-  color: #555;
-  font-family: 'poppins', sans-serif;
+.img img {
+	width: 500px;
 }
 
-///////////---------ICONES
+form {
+	width: 360px;
+}
+
+.login-content img {
+	width: 200px;
+}
+
+
+
+.login-content .input-div.one {
+	margin-top: 0;
+}
+
 .i {
-  color: #4F3B56;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	color: #bb00ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-//FILLE
-// .form-content .input-div-file {
-//   border-radius: 5px;
-//   color: #555;
-//   cursor: pointer;
-//   margin: 10px;
-//   padding: 2px 0px;
-//   font-family: 'poppins', sans-serif;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   float: left;
-// }
 
-
-/* Esconde o input */
-input[type="file"] {
-  display: none;
+.input-div>div {
+	position: relative;
+	height: 45px;
 }
 
-///////////---------BOTTOM
-.form-content .btn {
-  margin-top: 20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: var(linear-gradiente(-135deg, #71b7e6, #9b59b6));
+
+.btn {
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #4F3B56, #B4E4D3, #B4E4D3);
+	background-size: 200%;
+	font-size: .7rem;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
 }
 
-.form-content .btn button{
-  border-radius: 15px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
-  margin: 0 10px;
-  padding: 8px 15px 6px;
+.btn:hover {
+	background-position: right;
 }
 
-.form-content .btn button:hover {
-  transition: 0.3s ease-in-out;
-}
 
-///////////---------IMAGEM PRINCIPAL
-.container .ilustracao {
-  height: 100vh;
-  width: 100vh;
-  transition: width 0.4s ease;
-  object-fit:cover
-}
-
-///////////---------RESPONSIVIDADE--------/////////
-
-//Laptops, desktops
-@media(min-width: 1025px) and (max-width:1280px){
-  div{
-    grid-template-columns: 1fr;
-  }
-  .container {
+@media screen and (max-width: 1050px) {
+	.container {
 		grid-gap: 5rem;
 	}
 }
 
-
-///////////---------Tablets, ipads
-@media(min-width: 768px) , (max-width:1024px){
-  div{
-    grid-template-columns: 1fr;
-  }
-  form {
+@media screen and (max-width: 1000px) {
+	form {
 		width: 290px;
 	}
 
-}
-
-///////////---------Tablets de baixa resolução,celulares
-@media(min-width: 481px) and (max-width:767px) {
-  div{
-    grid-template-columns: 1fr;
-  }
-  form {
-		width: 290px;
+	.login-content h2 {
+		font-size: 2.4rem;
+		margin: 8px 0;
 	}
+
 	.img img {
 		width: 400px;
 	}
 }
 
+@media screen and (max-width: 900px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
 
-///////////---------a maioria dos smarthphones móveis 
-@media(min-width: 302px) and (max-width:480px){
+	.img {
+		display: none;
+	}
 
+	.wave {
+		display: none;
+	}
+
+	.login-content {
+		justify-content: center;
+	}
 }

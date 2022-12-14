@@ -1,5 +1,8 @@
+<!-- PÁGINA DE LOGIN -->
+
 <body>
   <form [formGroup]="momentForm" (ngSubmit)="submit()" #formDir="ngForm">
+
     <div class="container">
 
       <div class="img">
@@ -8,19 +11,23 @@
 
       <div class="login-content">
 
-
         <div class="login">
-          <img src="../../../assets/Images/Logo.png" alt="" />
 
+          <img src="../../../assets/Images/Logo.png" alt="" />
           <label for="Login"> </label>
+
+          <!-- NOME DE USER -->
           <div class="input-div one">
+
             <div class="i">
               <mat-icon>people</mat-icon>
             </div>
+
             <div class="div">
               <input id="Name" type="text" placeholder="Nome de usuario" formControlName="Name" maxlength="6"
                 minlength="6" />
             </div>
+
           </div>
 
           <div *ngIf="Login.invalid && formDir.submitted" class="validation-error">
@@ -29,21 +36,23 @@
             </mat-error>
           </div>
 
+          <!-- SENHA -->
           <div class="input-div pass">
+
             <div class="i">
               <mat-icon>lock</mat-icon>
             </div>
+
             <div class="div" style="display: flex;">
               <input id="Password" type="password" placeholder="Senha" formControlName="Password" maxlength="16"
                 minlength="6" />
 
-                
               <button mat-raised matTooltip="Caso esqueça sua senha, favor entrar em contato com a secretaria"
                 matTooltipClass="example-tooltip-uppercase" aria-label="Button that shows a red tooltip"
                 class="example-button">
                 <mat-icon>error</mat-icon>
               </button>
-              
+
             </div>
           </div>
 
@@ -52,7 +61,6 @@
               Preencha o campo de Senha corretamente
             </mat-error>
           </div>
-
 
           <input type="submit" class="btn" value="Login">
         </div>

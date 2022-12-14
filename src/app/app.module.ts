@@ -50,6 +50,7 @@ import { ElementDialogMappingComponent } from './components/element-dialog-mappi
 // import { ContextComponent } from './pages/context/context.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationMappingComponent } from './components/navigation-mapping/navigation-mapping.component';
+import { NavigationBaseComponent } from './components/navigation-base/navigation-base.component';
 
 
 
@@ -68,6 +69,7 @@ import { NavigationMappingComponent } from './components/navigation-mapping/navi
     // ContextComponent,
     NavigationComponent,
     NavigationMappingComponent,
+    NavigationBaseComponent,
   ],
 
   imports: [

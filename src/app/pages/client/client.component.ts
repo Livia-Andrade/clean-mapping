@@ -46,6 +46,8 @@ export class ClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // VINCULANDO ELEMENT DIALOG
+
   openDialog(element: PeriodicElement | null): void {
     const dialogRef = this.dialog.open(ElementDialogComponent, {
       width: '250px',
@@ -79,6 +81,7 @@ export class ClientComponent implements OnInit {
     this.openDialog(element);
   }
 
+  // EDITANDO BOTÃO DE DELETE
   deleteElement(position: number): void {
     this.dataSource = this.dataSource.filter(p => p.position !== position);
   }

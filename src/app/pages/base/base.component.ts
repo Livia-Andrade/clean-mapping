@@ -9,6 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class BaseComponent implements OnInit {
   title = 'Cadastro';
 
+  hide = true;
+  
   cadForm!: FormGroup;
 
   constructor() {
