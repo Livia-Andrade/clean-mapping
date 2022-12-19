@@ -9,7 +9,7 @@ import { PeriodicElementService } from 'src/app/services/periodic-element.servic
 
 
 export interface PeriodicElement {
-  position: number;
+  idUsuario: number;
   name: string;
   description: string;
   symbol: string;
@@ -17,16 +17,16 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Kleber', description: 'KGE', symbol: '875.515.590-19', password: '123' },
-  { position: 2, name: 'João', description: 'Juninho', symbol: '179.508.460-03', password: '321' },
-  { position: 3, name: 'Ronaldo', description: 'Vaqueli', symbol: '644.956.400-89', password: '456' },
-  { position: 4, name: 'Airton', description: 'Zambotti', symbol: '336.539.740-03', password: '789' },
-  { position: 5, name: 'Kaylane', description: 'Coelho', symbol: '875.515.590-19', password: '123' },
-  { position: 6, name: 'Livia', description: 'Andrade', symbol: '179.508.460-03', password: '321' },
-  { position: 7, name: 'Kailaine', description: 'Naiara', symbol: '644.956.400-89', password: '456' },
-  { position: 8, name: 'Renan', description: 'Mesquita', symbol: '336.539.740-03', password: '789' },
-  { position: 9, name: 'Julia', description: 'Julinha', symbol: '644.956.400-89', password: '456' },
-  { position: 10, name: 'Leandro', description: 'Leandrinho', symbol: '336.539.740-03', password: '789' },
+  { idUsuario: 1, name: 'Kleber', description: 'KGE', symbol: '875.515.590-19', password: '123' },
+  { idUsuario: 2, name: 'João', description: 'Juninho', symbol: '179.508.460-03', password: '321' },
+  { idUsuario: 3, name: 'Ronaldo', description: 'Vaqueli', symbol: '644.956.400-89', password: '456' },
+  { idUsuario: 4, name: 'Airton', description: 'Zambotti', symbol: '336.539.740-03', password: '789' },
+  { idUsuario: 5, name: 'Kaylane', description: 'Coelho', symbol: '875.515.590-19', password: '123' },
+  { idUsuario: 6, name: 'Livia', description: 'Andrade', symbol: '179.508.460-03', password: '321' },
+  { idUsuario: 7, name: 'Kailaine', description: 'Naiara', symbol: '644.956.400-89', password: '456' },
+  { idUsuario: 8, name: 'Renan', description: 'Mesquita', symbol: '336.539.740-03', password: '789' },
+  { idUsuario: 9, name: 'Julia', description: 'Julinha', symbol: '644.956.400-89', password: '456' },
+  { idUsuario: 10, name: 'Leandro', description: 'Leandrinho', symbol: '336.539.740-03', password: '789' },
 ];
 
 
@@ -39,12 +39,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ClientComponent implements OnInit {
   @ViewChild(MatTable)
   table!: MatTable<any>;
-  displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'password', 'action'];
+  displayedColumns: string[] = ['idUsuario', 'name', 'description', 'symbol', 'password', 'action'];
   // dataSource = ELEMENT_DATA;
   dataSource!: PeriodicElement[];
 
 
-  constructor(public dialog: MatDialog, public periodicElementService: PeriodicElementService) { 
+  constructor(public dialog: MatDialog, private periodicElementService: PeriodicElementService) { 
     this.periodicElementService.getElements().subscribe((data: PeriodicElement[]) => {
       this.dataSource  = data;
     });
@@ -59,13 +59,13 @@ export class ClientComponent implements OnInit {
     const dialogRef = this.dialog.open(ElementDialogComponent, {
       width: '250px',
       data: element == null ? {
-        position: null,
+        idUsuario: null,
         name: '',
         description: null,
         symbol: '',
         password: ''
       } : {
-        position: element.position,
+        idUsuario: element.idUsuario,
         name: element.name,
         description: element.description,
         symbol: element.symbol,
@@ -75,10 +75,10 @@ export class ClientComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result != undefined) { console.log(result);
-        if (this.dataSource.map(p => p.position).includes(result.position)) {
+        if (this.dataSource.map(p => p.idUsuario).includes(result.idUsuario)) {
           this.periodicElementService.editElement(result)
             .subscribe((data: PeriodicElement) => {
-              const index = this.dataSource.findIndex(p => p.position === data.position);
+              const index = this.dataSource.findIndex(p => p.idUsuario === data.idUsuario);
               this.dataSource[index] = data;
               this.table.renderRows();
             });
@@ -98,8 +98,8 @@ export class ClientComponent implements OnInit {
   }
 
   // EDITANDO BOTÃO DE DELETE
-  deleteElement(position: number): void {
-    this.dataSource = this.dataSource.filter(p => p.position !== position);
+  deleteElement(idUsuario: number): void {
+    this.dataSource = this.dataSource.filter(p => p.idUsuario !== idUsuario);
   }
 
 }
