@@ -1,3 +1,25 @@
+<!--BACKGROUND DA PÁGINA  -->
+
+<div class="page-bg"></div>
+
+<div class="animation-wrapper">
+  <div class="particle particle-1"></div>
+  <div class="particle particle-2"></div>
+  <div class="particle particle-3"></div>
+  <div class="particle particle-4"></div>
+</div>
+
+<!-- !-- MARGEM DE CIMA --> 
+<div class="juntos">
+  <!-- <app-navigation></app-navigation> -->
+
+  <div class="content">
+    <mat-toolbar style="background-color: #45015e; height: 60px; color: white;">
+      <span class="fill-remaining-space"></span>
+      <span> GERENCIAMENTO DE MAPEAMENTO </span>
+      <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+
 <div class='demo-app-main'>
     <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
       <ng-template #eventContent let-arg>
@@ -7,3 +29,8 @@
     </full-calendar>
   </div>
 
+
+    <!-- CONTROLE DE PAGINAÇÃO -->
+    <mat-paginator class="mat-elevation-z2" #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]"
+      style="background-color: #4f3b56; color: white;">
+    </mat-paginator>
