@@ -3,13 +3,14 @@ import { ElementDialogComponent } from './../../components/element-dialog/elemen
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { PeriodicElementService } from 'src/app/services/periodic-element.service';
 
 
 
 
 export interface PeriodicElement {
-  name: string;
   position: number;
+  name: string;
   description: string;
   symbol: string;
   password: string;
@@ -32,16 +33,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss']
+  styleUrls: ['./client.component.scss'],
+  providers: [PeriodicElementService]
 })
 export class ClientComponent implements OnInit {
   @ViewChild(MatTable)
   table!: MatTable<any>;
   displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'password', 'action'];
-  dataSource = ELEMENT_DATA;
+  // dataSource = ELEMENT_DATA;
+  dataSource!: PeriodicElement[];
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public periodicElementService: PeriodicElementService) { 
+    this.periodicElementService.getElements().subscribe((data: PeriodicElement[]) => {
+      this.dataSource  = data;
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -55,23 +62,32 @@ export class ClientComponent implements OnInit {
         position: null,
         name: '',
         description: null,
-        symbol: ''
+        symbol: '',
+        password: ''
       } : {
         position: element.position,
         name: element.name,
         description: element.description,
-        symbol: element.symbol
+        symbol: element.symbol,
+        password: element.password
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result != undefined) {
+      if (result != undefined) { console.log(result);
         if (this.dataSource.map(p => p.position).includes(result.position)) {
-          this.dataSource[result.position - 1] = result;
-          this.table.renderRows();
+          this.periodicElementService.editElement(result)
+            .subscribe((data: PeriodicElement) => {
+              const index = this.dataSource.findIndex(p => p.position === data.position);
+              this.dataSource[index] = data;
+              this.table.renderRows();
+            });
         } else {
-          this.dataSource.push(result);
-          this.table.renderRows();
+          this.periodicElementService.createElements(result)
+            .subscribe((data: PeriodicElement) => {
+              this.dataSource.push(data);
+              this.table.renderRows();
+            });
         }
       }
     });

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 //Imports 
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -74,6 +75,7 @@ import { NavigationBaseComponent } from './components/navigation-base/navigation
 
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
