@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Clean Mapping';
+  sideBarOpen = true;
 
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }
