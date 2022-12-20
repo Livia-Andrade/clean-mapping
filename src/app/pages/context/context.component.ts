@@ -60,7 +60,7 @@ export class ContextComponent  {
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('Please enter a new title for your event');
+    const title = prompt('Insira o nome do evento que deseja adicionar');
     const calendarApi = selectInfo.view.calendar;
 
     calendarApi.unselect(); // clear date selection
@@ -77,7 +77,7 @@ export class ContextComponent  {
   }
 
   handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+    if (confirm(`Você tem certeza que deseja deletar este evento '${clickInfo.event.title}' ?`)) {
       clickInfo.event.remove();
     }
   }
