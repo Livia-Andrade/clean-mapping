@@ -17,6 +17,7 @@ export class LogComponent implements OnInit {
       Login: new FormControl('', [Validators.required]),
       Password: new FormControl('', [Validators.required]),
       Image: new FormControl(''),
+      Name: new FormControl ('', [Validators.required])
     });
   }
 
