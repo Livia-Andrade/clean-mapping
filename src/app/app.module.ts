@@ -56,6 +56,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule} from '@angular/material/menu';
 import { HomeUserComponent } from './pages/home-user/home-user.component';
 import { DeleteComponent } from './components/delete/delete.component';
+import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { DeleteComponent } from './components/delete/delete.component';
     ContextComponent,
     HomeUserComponent,
     DeleteComponent,
+    DialogAnimationsComponent,
  ],
 
   imports: [
