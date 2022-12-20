@@ -54,6 +54,9 @@ import { MatDividerModule } from '@angular/material/divider';
 
 //import HEADER
 import { MatMenuModule} from '@angular/material/menu';
+import { HomeUserComponent } from './pages/home-user/home-user.component';
+import { DeleteComponent } from './components/delete/delete.component';
+
 
 @NgModule({
   declarations: [
@@ -68,6 +71,8 @@ import { MatMenuModule} from '@angular/material/menu';
     LayoutComponent,
     CommandComponent,
     ContextComponent,
+    HomeUserComponent,
+    DeleteComponent,
  ],
 
   imports: [

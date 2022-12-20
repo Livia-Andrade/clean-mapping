@@ -1,3 +1,4 @@
+import { HomeUserComponent } from './pages/home-user/home-user.component';
 
 import { MappingComponent } from './pages/mapping/mapping.component';
 import { ClientComponent } from './pages/client/client.component';
@@ -6,7 +7,6 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from './pages/base/base.component';
 import { LogComponent } from './pages/log/log.component';
-
 import { ContextComponent } from './pages/context/context.component';
 
 const routes: Routes = [
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'client', component: ClientComponent },
   { path: 'mapping', component: MappingComponent},
   { path: 'context', component: ContextComponent},
-
+  { path: 'home-user', component: HomeUserComponent}
 
   // { path: '', Component: LogoutComponent},  --> CRIA COMPONENT LOGOUT
 
