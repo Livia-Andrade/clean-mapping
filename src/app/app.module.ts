@@ -19,7 +19,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { CommandComponent } from './components/command/command.component';
 import { ContextComponent } from './pages/context/context.component';
 
-//Imports 
+//Imports
+import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
@@ -45,7 +46,6 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 
 //import SIDEBAR
 import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -56,7 +56,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule} from '@angular/material/menu';
 import { HomeUserComponent } from './pages/home-user/home-user.component';
 import { DeleteComponent } from './components/delete/delete.component';
-import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
+// import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
 
 
 @NgModule({
@@ -74,7 +74,6 @@ import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-an
     ContextComponent,
     HomeUserComponent,
     DeleteComponent,
-    DialogAnimationsComponent,
  ],
 
   imports: [
