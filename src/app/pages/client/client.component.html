@@ -83,9 +83,14 @@ BACKGROUND DA PÁGINA  -->
             <mat-icon>edit</mat-icon>
           </button>
 
-          <button mat-icon-button (click)="deleteElement(element.position)" style="color: rgb(79, 59, 86);">
+          <!-- <button mat-icon-button (click)="deleteElement(element.position)" style="color: rgb(79, 59, 86);">
+            <mat-icon>delete</mat-icon>
+          </button> -->
+
+          <button mat-icon-button (click)="openDelete('900ms', '900ms')" style="color: rgb(79, 59, 86);">
             <mat-icon>delete</mat-icon>
           </button>
+          
 
         </td>
 
@@ -102,5 +107,7 @@ BACKGROUND DA PÁGINA  -->
       style="background-color: #4f3b56; color: white;">
     </mat-paginator>
 
+    
+    
   </div>
 </div>

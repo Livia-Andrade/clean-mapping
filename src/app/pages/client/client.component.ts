@@ -1,8 +1,9 @@
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ElementDialogComponent } from './../../components/element-dialog/element-dialog.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { DialogoConfirmacaoComponent } from 'src/app/components/dialogo-confirmacao/dialogo-confirmacao.component';
 
 
 
@@ -33,13 +34,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-client',
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.scss']
+
 })
+
 export class ClientComponent implements OnInit {
   @ViewChild(MatTable)
   table!: MatTable<any>;
   displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'password', 'action'];
   dataSource = ELEMENT_DATA;
-
+  
+  openDelete(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(DialogoConfirmacaoComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
 
   constructor(public dialog: MatDialog) { }
 
@@ -85,6 +95,15 @@ export class ClientComponent implements OnInit {
   deleteElement(position: number): void {
     this.dataSource = this.dataSource.filter(p => p.position !== position);
   }
+
+  // @Component({
+  //   selector: 'app-dialogo-confirmacao',
+  //   templateUrl: './dialogo-confirmacao.component.html',
+  // })
+  // export class DialogoConfirmacaoComponent {
+  //   constructor(public dialogRef: MatDialogRef<DialogoConfirmacaoComponent >) {}
+  // }  
+  
 
 }
 

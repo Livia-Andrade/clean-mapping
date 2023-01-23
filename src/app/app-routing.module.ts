@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from './pages/base/base.component';
 import { LogComponent } from './pages/log/log.component';
 import { ContextComponent } from './pages/context/context.component';
+import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/dialogo-confirmacao.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'log'},
@@ -17,8 +18,8 @@ const routes: Routes = [
   { path: 'client', component: ClientComponent },
   { path: 'mapping', component: MappingComponent},
   { path: 'context', component: ContextComponent},
-  { path: 'home-user', component: HomeUserComponent}
-
+  { path: 'home-user', component: HomeUserComponent},
+  { path: 'delete', component: DialogoConfirmacaoComponent}
   // { path: '', Component: LogoutComponent},  --> CRIA COMPONENT LOGOUT
 
   
