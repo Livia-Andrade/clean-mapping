@@ -20,9 +20,29 @@
       <span class="fill-remaining-space"></span>
     </mat-toolbar>
 
-    <div class="filter">
-      <a>colocar filtro de seleção de turma aq </a>
+    <div class="container">
+
+      <!-- search -->
+      <div class="search">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Insira sua pesquisa</mat-label>
+          <input matInput placeholder="Ex. ">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </p>
     </div>
+
+    <!--btn de salvar-->
+
+    <mat-list-item class="btn" routerLink="/">
+      <button mat-button>
+      Salvar
+     </button>
+     
+    </mat-list-item>
+  
+
 <div class='demo-app-main'>
     <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
       <ng-template #eventContent let-arg>
@@ -33,4 +53,5 @@
   </div>
 
 
- 
+</div>
+  
