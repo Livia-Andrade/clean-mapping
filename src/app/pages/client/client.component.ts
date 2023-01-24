@@ -42,7 +42,7 @@ export class ClientComponent implements OnInit {
   table!: MatTable<any>;
   displayedColumns: string[] = ['position', 'name', 'description', 'symbol', 'password', 'action'];
   dataSource = ELEMENT_DATA;
-  
+
   openDelete(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(DialogoConfirmacaoComponent, {
       width: '250px',
@@ -103,7 +103,7 @@ export class ClientComponent implements OnInit {
   // export class DialogoConfirmacaoComponent {
   //   constructor(public dialogRef: MatDialogRef<DialogoConfirmacaoComponent >) {}
   // }  
-  
+
 
 }
 

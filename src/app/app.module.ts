@@ -56,6 +56,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule} from '@angular/material/menu';
 import { HomeUserComponent } from './pages/home-user/home-user.component';
 import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/dialogo-confirmacao.component';
+import { PdfComponent } from './components/pdf/pdf.component';
 
 // import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
 
@@ -75,6 +76,7 @@ import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/di
     ContextComponent,
     HomeUserComponent,
     DialogoConfirmacaoComponent,
+    PdfComponent,
  ],
 
   imports: [

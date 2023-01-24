@@ -3,7 +3,7 @@ import { ElementDialogComponent } from './../../components/element-dialog/elemen
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { ElementDialogMappingComponent } from 'src/app/components/element-dialog-mapping/element-dialog-mapping.component';
-
+import { DialogoConfirmacaoComponent } from 'src/app/components/dialogo-confirmacao/dialogo-confirmacao.component';
 
 export interface PeriodicElement {
   recurso: string;
@@ -17,16 +17,16 @@ export interface PeriodicElement {
 //ID, NOME, NÚMERO, OBSERVAÇÃO 
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { recurso:'Equipamento', position: 1, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 2, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 3, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 4, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 5, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 6, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 7, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 8, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 9, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso:'Equipamento', position: 10, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 1, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 2, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 3, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 4, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 5, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 6, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 7, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 8, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 9, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipamento', position: 10, name: 'Maquina', number: '9', symbol: 'Funcionando' },
 ];
 
 
@@ -39,8 +39,16 @@ export class MappingComponent implements OnInit {
 
   @ViewChild(MatTable)
   table!: MatTable<any>;
-  displayedColumns: string[] = ['position','recurso', 'name', 'number', 'symbol', 'action'];
+  displayedColumns: string[] = ['position', 'recurso', 'name', 'number', 'symbol', 'action'];
   dataSource = ELEMENT_DATA;
+
+  openDelete(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(DialogoConfirmacaoComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
 
   constructor(public dialog: MatDialog) { }
 

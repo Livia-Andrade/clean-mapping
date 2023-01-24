@@ -75,7 +75,12 @@ BACKGROUND DA PÁGINA  -->
             <button mat-icon-button (click)="editElement(element)" style="color: rgb(79, 59, 86);">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button (click)="deleteElement(element.position)" style="color: rgb(79, 59, 86);">
+
+            <!-- <button mat-icon-button (click)="deleteElement(element.position)" style="color: rgb(79, 59, 86);">
+              <mat-icon>delete</mat-icon>
+            </button> -->
+            
+            <button mat-icon-button (click)="openDelete('400ms', '400ms')" style="color: rgb(79, 59, 86);">
               <mat-icon>delete</mat-icon>
             </button>
           </td>

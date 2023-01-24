@@ -9,6 +9,7 @@ import { BaseComponent } from './pages/base/base.component';
 import { LogComponent } from './pages/log/log.component';
 import { ContextComponent } from './pages/context/context.component';
 import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/dialogo-confirmacao.component';
+import { PdfComponent } from './components/pdf/pdf.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'log'},
@@ -19,8 +20,8 @@ const routes: Routes = [
   { path: 'mapping', component: MappingComponent},
   { path: 'context', component: ContextComponent},
   { path: 'home-user', component: HomeUserComponent},
-  { path: 'delete', component: DialogoConfirmacaoComponent}
-  // { path: '', Component: LogoutComponent},  --> CRIA COMPONENT LOGOUT
+  { path: 'delete', component: DialogoConfirmacaoComponent},
+  { path: 'pdf', component: PdfComponent}
 
   
 
