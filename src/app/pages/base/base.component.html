@@ -10,7 +10,7 @@
 
   <mat-toolbar style="background-color: #B4E4D3; height: 60px; color:#4f3b56;">
     <span class="fill-remaining-space"></span>
-    <span style="margin-left: 3%;"> CADASTRO DE USUÁRIO </span>
+    <span style="margin-left: 3%; font-weight: bold ;"> User Registration </span>
     <span class="fill-remaining-space"></span>
   </mat-toolbar>
 
@@ -31,7 +31,7 @@
           <label for="Cadastramento de novo usuario"> </label>
           <p>
             <mat-form-field appearance="fill" style="width: 350px;">
-              <mat-label>Nome</mat-label>
+              <mat-label>Name</mat-label>
               <input id="name" matInput placeholder="Nome Completo" maxlength="55" minlength="10">
               <mat-icon matSuffix style="color: #4F3B56;">assignment</mat-icon>
               <mat-hint></mat-hint>
@@ -40,7 +40,7 @@
 
           <div *ngIf="Name.invalid && formDir.submitted" class="validation-error">
             <mat-error *ngIf="Name.errors?.['required']">
-              Preencha o campo corretamente
+              Fill In The Name Field Correctly
             </mat-error>
           </div>
 
@@ -56,13 +56,13 @@
 
           <div *ngIf="Cpf.invalid && formDir.submitted" class="validation-error">
             <mat-error *ngIf="Cpf.errors?.['required']">
-              Preencha o campo de cpf corretamente
+              Fill In The CPF Field Correctly
             </mat-error>
           </div>
 
           <p>
             <mat-form-field appearance="fill" style="width: 350px;">
-              <mat-label>Nome de usuario</mat-label>
+              <mat-label>Username</mat-label>
               <input id="Username" matInput placeholder="Nickname" maxlength="10" minlength="5">
               <mat-icon matSuffix style="color: #4F3B56;">perm_identity</mat-icon>
               <mat-hint></mat-hint>
@@ -71,13 +71,13 @@
 
           <div *ngIf="Username.invalid && formDir.submitted" class="validation-error">
             <mat-error *ngIf="Username.errors?.['required']">
-              Preencha o campo de user corretamente
+              Fill In The Username Field Correctly
             </mat-error>
           </div>
 
 
           <mat-form-field appearance="fill" style="width: 350px;">
-            <mat-label>Senha</mat-label>
+            <mat-label>Password</mat-label>
             <input matInput [type]="hide ? 'password' : 'text'" maxlength="20">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide">
@@ -88,13 +88,13 @@
 
           <div *ngIf="Password.invalid && formDir.submitted" class="validation-error">
             <mat-error *ngIf="Password.errors?.['required']">
-              Preencha o campo de Senha corretamente
+              Fill In The Password Field Correctly
             </mat-error>
           </div>
 
 
 
-          <input type="submit" class="btn" value="Cadastrar Usuario">
+          <input type="submit" class="btn" value="Register User">
         </div>
       </div>
     </div>

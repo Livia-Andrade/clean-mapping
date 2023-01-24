@@ -1,11 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
-
+import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-context',
@@ -13,8 +13,11 @@ import { INITIAL_EVENTS, createEventId } from './event-utils';
   styleUrls: ['./context.component.scss']
 })
 
-export class ContextComponent  {
 
+
+export class ContextComponent {
+
+@ViewChild('content', { static: false }) el: ElementRef;
   title = 'fullCallenderApp';
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
@@ -44,10 +47,14 @@ export class ContextComponent  {
     eventChange:
     eventRemove:
     */
+
   };
   currentEvents: EventApi[] = [];
 
   constructor(private changeDetector: ChangeDetectorRef) {
+  }
+
+  ngOnInit(): void {
   }
 
   handleCalendarToggle() {
@@ -85,6 +92,24 @@ export class ContextComponent  {
   handleEvents(events: EventApi[]) {
     this.currentEvents = events;
     this.changeDetector.detectChanges();
+  }
+
+
+  
+
+  printSimplePDF() {
+    const doc = new jsPDF();
+    doc.text("Hello world!", 10, 10);
+    doc.save("Grade.pdf");
+  }
+
+  printPDF() {
+    let pdf = new jsPDF('p', 'pt', 'a4');
+    pdf.html(this.el.nativeElement, {
+      callback: (pdf) => {
+        pdf.save("testePDFHTML.pdf");
+      }
+    })
   }
 }
 

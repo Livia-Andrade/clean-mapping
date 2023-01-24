@@ -9,28 +9,42 @@
   <div class="particle particle-4"></div>
 </div>
 
-<!-- !-- MARGEM DE CIMA --> 
-<div class="juntos">
-  <!-- <app-navigation></app-navigation> -->
 
-  <div class="content">
-    <mat-toolbar style="background-color: #4f3b56; height: 60px; color: white;">
-      <span class="fill-remaining-space"></span>
-      <span> GERENCIAMENTO DE MAPEAMENTO </span>
-      <span class="fill-remaining-space"></span>
-    </mat-toolbar>
+<!-- !-- MARGEM DE CIMA -->
 
-    <div class="filter">
-      <a>colocar filtro de seleção de turma aq </a>
+
+  <mat-toolbar style="background-color: #4f3b56; height: 60px; color: white;">
+    <span class="fill-remaining-space"></span>
+    <!-- GERENCIAMENTO DE AMBIENTE -->
+    <span> Resource Grid </span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+
+  <div class="header">
+    <!-- BARRA DE PESQUISA -->
+    <div class="pesquisa" style="float: right;">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="Ex. Ronaldo">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </p>
     </div>
-<div class='demo-app-main'>
-    <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
-      <ng-template #eventContent let-arg>
-        <b>{{ arg.timeText }}</b>
-        <i>{{ arg.event.title }}</i>
-      </ng-template>
-    </full-calendar>
+
+    <button class="button" (click)="printPDF()">
+      <mat-icon>cloud_download</mat-icon>
+    </button>
   </div>
 
 
- 
+  <div id="content" #content>
+    <div class='demo-app-main'>
+      <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
+        <ng-template #eventContent let-arg>
+          <b>{{ arg.timeText }}</b>
+          <i>{{ arg.event.title }}</i>
+        </ng-template>
+      </full-calendar>
+    </div>
+  </div>

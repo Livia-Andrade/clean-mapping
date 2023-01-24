@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ClientComponent } from 'src/app/pages/client/client.component';
 @Component({
   selector: 'app-dialogo-confirmacao',
@@ -11,6 +11,10 @@ export class DialogoConfirmacaoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // @Input() position: any;
+  // @Input() dataSource: any;
+  // @Input() p: any;
 
   // deleteElement(position: number): void {
   //   this.dataSource = this.dataSource.filter(p => p.position !== position);
