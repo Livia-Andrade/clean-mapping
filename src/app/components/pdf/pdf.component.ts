@@ -18,7 +18,7 @@ export class PdfComponent implements OnInit {
 
   printSimplePDF() {
     const doc = new jsPDF();
-    doc.text("Hello world!", 10, 10);
+    doc.text("A implementar!", 10, 10);
     doc.save("Grade.pdf");
   }
 

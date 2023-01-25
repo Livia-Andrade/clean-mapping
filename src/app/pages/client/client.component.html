@@ -17,7 +17,7 @@ BACKGROUND DA PÁGINA  -->
 <div class="content">
   <mat-toolbar style="background-color: #4f3b56; height: 60px; color: white;">
     <span class="fill-remaining-space"></span>
-    <span> Gerenciamento De Usuarios</span>
+    <span> User Management</span>
     <span class="fill-remaining-space"></span>
   </mat-toolbar>
 
@@ -28,14 +28,13 @@ BACKGROUND DA PÁGINA  -->
     <!-- <button mat-button style="background-color: rgb(79, 59, 86); color: white;" (click)="openDialog(null)">Add
       User</button> -->
 
-    <button mat-button style="background-color: rgb(79, 59, 86); color: white;" routerLink="/base">Adicion
-      User</button>
+    <button mat-button style="background-color: rgb(79, 59, 86); color: white;" routerLink="/base">Add User</button>
 
     <!-- BARRA DE PESQUISA -->
     <div class="pesquisa">
       <p>
         <mat-form-field appearance="legacy">
-          <mat-label>Insira sua pesquisa</mat-label>
+          <mat-label>Enter your search</mat-label>
           <input matInput placeholder="Ex. Ronaldo">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
@@ -53,7 +52,7 @@ BACKGROUND DA PÁGINA  -->
 
       <!-- NOME -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> NOME </th>
+        <th mat-header-cell *matHeaderCellDef> NAME </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
@@ -71,12 +70,12 @@ BACKGROUND DA PÁGINA  -->
 
       <!-- SENHA -->
       <ng-container matColumnDef="password">
-        <th mat-header-cell *matHeaderCellDef> SENHA </th>
+        <th mat-header-cell *matHeaderCellDef> PASSWORD </th>
         <td mat-cell *matCellDef="let element"> {{element.password}} </td>
       </ng-container>
 
       <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <th mat-header-cell *matHeaderCellDef> ACTIONS </th>
         <td mat-cell *matCellDef="let element">
 
           <button mat-icon-button (click)="editElement(element)" style="color: rgb(79, 59, 86);">
@@ -103,7 +102,7 @@ BACKGROUND DA PÁGINA  -->
     </table>
 
     <!-- CONTROLE DE PAGINAÇÃO -->
-    <mat-paginator class="mat-elevation-z2" #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]"
+    <mat-paginator class="mat-elevation-z2" #paginator [pageSize]="10" [pageSizeOptions]="[2, 5, 10, 25, 100]"
       style="background-color: #4f3b56; color: white;">
     </mat-paginator>
 

@@ -9,49 +9,33 @@
   <div class="particle particle-4"></div>
 </div>
 
-<!-- !-- MARGEM DE CIMA --> 
-<div class="juntos">
-  <!-- <app-navigation></app-navigation> -->
+<div class="content">
+  <mat-toolbar style="background-color: #4f3b56; height: 60px; color: white;">
+    <span class="fill-remaining-space"></span>
+    <span> Resource Grid </span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
 
-  <div class="content">
-    <mat-toolbar style="background-color: #4f3b56; height: 60px; color: white;">
-      <span class="fill-remaining-space"></span>
-      <span> GERENCIAMENTO DE MAPEAMENTO </span>
-      <span class="fill-remaining-space"></span>
-    </mat-toolbar>
+  <div class="header">
 
-    <div class="container">
+    <button class="button" (click)="printPDF()">
+      <mat-icon style="color: #eaf9ff; width: 35px;">picture_as_pdf</mat-icon>
+    </button>
 
-      <!-- search -->
-      <div class="search">
+    <!-- BARRA DE PESQUISA -->
+
+    <div class="pesquisa" style="float: right;">
       <p>
         <mat-form-field appearance="legacy">
-          <mat-label>Insira sua pesquisa</mat-label>
-          <input matInput placeholder="Ex. ">
+          <mat-label>Enter your search</mat-label>
+          <input matInput placeholder="Ex. 3DI">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </p>
     </div>
+  </div>
 
-    <!--btn de salvar-->
-    <mat-list class="btn" routerLink="#">
-      <button mat-button
-      style="background-color: #26612D; color: white;">
-
-        Salvar
-      </button>
-    </mat-list>
-
-
-    <!-- <mat-list-item class="btn" routerLink="#">
-      <button mat-button>
-      Salvar
-     </button>
-     
-    </mat-list-item> -->
-  
-
-<div class='demo-app-main'>
+  <div class='demo-app-main'>
     <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
       <ng-template #eventContent let-arg>
         <b>{{ arg.timeText }}</b>
@@ -59,7 +43,3 @@
       </ng-template>
     </full-calendar>
   </div>
-
-
-</div>
-  

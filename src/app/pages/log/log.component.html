@@ -24,7 +24,7 @@
             </div>
 
             <div class="div">
-              <input id="Name" type="text" placeholder="Nome de usuario" formControlName="Name" maxlength="6"
+              <input id="Name" type="text" placeholder="Username" formControlName="Name" maxlength="6"
                 minlength="6" />
             </div>
 
@@ -32,7 +32,7 @@
 
           <div *ngIf="Login.invalid && formDir.submitted" class="validation-error">
             <mat-error *ngIf="Login.errors?.['required']">
-              Preencha o campo de Login corretamente
+              Fill in the Login field correctly
             </mat-error>
           </div>
 
@@ -44,10 +44,10 @@
             </div>
 
             <div class="div" style="display: flex;">
-              <input id="Password" type="password" placeholder="Senha" formControlName="Password" maxlength="16"
+              <input id="Password" type="password" placeholder="Password" formControlName="Password" maxlength="16"
                 minlength="6" />
 
-              <button mat-raised matTooltip="Caso esqueça sua senha, favor entrar em contato com a secretaria"
+              <button mat-raised matTooltip="If you forget your password, please contact the secretary"
                 matTooltipClass="example-tooltip-uppercase" aria-label="Button that shows a red tooltip"
                 class="example-button">
                 <mat-icon>error</mat-icon>
@@ -58,7 +58,7 @@
 
           <div *ngIf="Password.invalid && formDir.submitted" class="validation-error">
             <mat-error *ngIf="Password.errors?.['required']">
-              Preencha o campo de Senha corretamente
+              Fill in the password field correctly
             </mat-error>
           </div>
 

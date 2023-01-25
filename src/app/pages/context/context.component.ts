@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { jsPDF } from 'jspdf';
+import { Component, OnInit, ChangeDetectorRef,ElementRef,ViewChild } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -6,12 +7,13 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
 
-
 @Component({
   selector: 'app-context',
   templateUrl: './context.component.html',
   styleUrls: ['./context.component.scss']
 })
+
+
 
 export class ContextComponent  {
 
@@ -85,6 +87,23 @@ export class ContextComponent  {
   handleEvents(events: EventApi[]) {
     this.currentEvents = events;
     this.changeDetector.detectChanges();
+  }
+
+  @ViewChild ('content', {static: false}) el: ElementRef;
+  
+  printSimplePDF() {
+    const doc = new jsPDF();
+    doc.text("A implementar!", 10, 10);
+    doc.save("Grade.pdf");
+  }
+
+  printPDF(){
+    let pdf = new jsPDF ( 'p', 'pt', 'a4');
+    pdf.html(this.el.nativeElement, {
+      callback: (pdf) => {
+        pdf.save("testePDFHTML.pdf");
+      }
+    })
   }
 }
 

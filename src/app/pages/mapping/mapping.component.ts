@@ -17,16 +17,16 @@ export interface PeriodicElement {
 //ID, NOME, NÚMERO, OBSERVAÇÃO 
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { recurso: 'Equipamento', position: 1, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 2, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 3, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 4, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 5, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 6, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 7, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 8, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 9, name: 'Maquina', number: '9', symbol: 'Funcionando' },
-  { recurso: 'Equipamento', position: 10, name: 'Maquina', number: '9', symbol: 'Funcionando' },
+  { recurso: 'Equipment', position: 1, name: 'Machine', number: '10', symbol: 'Working' },
+  { recurso: 'Equipment', position: 2, name: 'Machine', number: '9', symbol: 'Working' },
+  { recurso: 'Equipment', position: 3, name: 'Machine', number: '8', symbol: 'Working' },
+  { recurso: 'Equipment', position: 4, name: 'Machine', number: '7', symbol: 'Working' },
+  { recurso: 'Equipment', position: 5, name: 'Machine', number: '6', symbol: 'Working' },
+  { recurso: 'Equipment', position: 6, name: 'Machine', number: '5', symbol: 'Working' },
+  { recurso: 'Equipment', position: 7, name: 'Machine', number: '4', symbol: 'Working' },
+  { recurso: 'Equipment', position: 8, name: 'Machine', number: '3', symbol: 'Working' },
+  { recurso: 'Equipment', position: 9, name: 'Machine', number: '2', symbol: 'Working' },
+  { recurso: 'Equipment', position: 10, name: 'Machine', number: '1', symbol: 'Working' },
 ];
 
 
