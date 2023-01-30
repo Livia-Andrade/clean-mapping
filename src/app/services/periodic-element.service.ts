@@ -5,12 +5,12 @@ import { PeriodicElement } from '../pages/client/client.component';
 
 @Injectable()
 export class PeriodicElementService {
-  elementApiUrl = 'http://localhost:8080/client';
+  elementApiUrl = '/client';
 
   constructor(private http: HttpClient) { }
 
-  getElements(): Observable<PeriodicElement[]> {
-    return this.http.get<PeriodicElement[]>(this.elementApiUrl).pipe(tap(data => JSON.stringify(data)));
+  getElements(){
+    return this.http.get<PeriodicElement[]>(this.elementApiUrl);
   }
 
   createElements(element: PeriodicElement): Observable<PeriodicElement> {

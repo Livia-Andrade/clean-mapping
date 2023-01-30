@@ -18,12 +18,12 @@ export class ClientService {
 
   // private myurl = 'http://localhost:8080/client';
 
-  private readonly api = '/assets/client.json';
+  private readonly api = '/client';
   constructor(private httpClient: HttpClient) { }
 
   listar() {
     // return this.httpClient.get<PeriodicElement[]>(this.myurl).pipe(delay(2500));
-    return this.httpClient.get<PeriodicElement[]>(this.api).pipe(delay(2500));
+    return this.httpClient.get<PeriodicElement[]>(this.api);
   }
 
 }
