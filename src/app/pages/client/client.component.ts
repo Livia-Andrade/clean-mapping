@@ -5,9 +5,6 @@ import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { PeriodicElementService } from 'src/app/services/periodic-element.service';
 
-
-
-
 export interface PeriodicElement {
   idUsuario: number;
   name: string;

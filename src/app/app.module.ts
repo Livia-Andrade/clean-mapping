@@ -54,6 +54,17 @@ import { NavigationMappingComponent } from './components/navigation-mapping/navi
 import { NavigationBaseComponent } from './components/navigation-base/navigation-base.component';
 
 
+<<<<<<< Updated upstream
+=======
+//import HEADER
+import { MatMenuModule} from '@angular/material/menu';
+import { HomeUserComponent } from './pages/home-user/home-user.component';
+import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/dialogo-confirmacao.component';
+import { PdfComponent } from './components/pdf/pdf.component';
+import { PeriodicElementService } from './services/periodic-element.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PeriodicElementyService } from './services/periodic-elementy.service';
+>>>>>>> Stashed changes
 
 
 
@@ -118,7 +129,11 @@ import { NavigationBaseComponent } from './components/navigation-base/navigation
     FormsModule,
     LayoutModule,
   ],
+<<<<<<< Updated upstream
   providers: [],
+=======
+  providers: [PeriodicElementService, PeriodicElementyService],
+>>>>>>> Stashed changes
   bootstrap: [AppComponent]
 })
 export class AppModule { }
