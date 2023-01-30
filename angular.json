@@ -17,6 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "raf",
+              "@babel/runtime-corejs3",
+              "jspdf",
+              "canvg"
+            ],
             "outputPath": "dist/clean-mapping",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -68,6 +75,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "your-application-name:build",
+            "proxyConfig": "src/proxy.conf.js"
+          },
           "configurations": {
             "production": {
               "browserTarget": "clean-mapping:build:production"

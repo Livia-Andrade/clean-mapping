@@ -57,6 +57,8 @@ import { MatMenuModule} from '@angular/material/menu';
 import { HomeUserComponent } from './pages/home-user/home-user.component';
 import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/dialogo-confirmacao.component';
 import { PdfComponent } from './components/pdf/pdf.component';
+import { PeriodicElementService } from './services/periodic-element.service';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
 
@@ -107,6 +109,7 @@ import { PdfComponent } from './components/pdf/pdf.component';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatTooltipModule,
+    HttpClientModule,
 
 
     //import SIDEBAR
@@ -121,7 +124,7 @@ import { PdfComponent } from './components/pdf/pdf.component';
     //import CALENDAR
     FullCalendarModule,
   ],
-  providers: [],
+  providers: [PeriodicElementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
