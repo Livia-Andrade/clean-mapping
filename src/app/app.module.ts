@@ -59,6 +59,10 @@ import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/di
 import { PdfComponent } from './components/pdf/pdf.component';
 import { PeriodicElementService } from './services/periodic-element.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EnvironmentComponent } from './pages/environment/environment.component';
+import { TeacherComponent } from './pages/teacher/teacher.component';
+import { EquipmentComponent } from './pages/equipment/equipment.component';
+import { ClassComponent } from './pages/class/class.component';
 
 // import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
 
@@ -79,6 +83,10 @@ import { HttpClientModule } from '@angular/common/http';
     HomeUserComponent,
     DialogoConfirmacaoComponent,
     PdfComponent,
+    EnvironmentComponent,
+    TeacherComponent,
+    EquipmentComponent,
+    ClassComponent,
  ],
 
   imports: [

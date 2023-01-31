@@ -1,3 +1,5 @@
+import { TeacherComponent } from './pages/teacher/teacher.component';
+import { EquipmentComponent } from './pages/equipment/equipment.component';
 import { HomeUserComponent } from './pages/home-user/home-user.component';
 
 import { MappingComponent } from './pages/mapping/mapping.component';
@@ -10,6 +12,8 @@ import { LogComponent } from './pages/log/log.component';
 import { ContextComponent } from './pages/context/context.component';
 import { DialogoConfirmacaoComponent } from './components/dialogo-confirmacao/dialogo-confirmacao.component';
 import { PdfComponent } from './components/pdf/pdf.component';
+import { EnvironmentComponent } from './pages/environment/environment.component';
+import { ClassComponent } from './pages/class/class.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'log'},
@@ -21,9 +25,12 @@ const routes: Routes = [
   { path: 'context', component: ContextComponent},
   { path: 'home-user', component: HomeUserComponent},
   { path: 'delete', component: DialogoConfirmacaoComponent},
-  { path: 'pdf', component: PdfComponent}
+  { path: 'pdf', component: PdfComponent},
+  { path: 'enviroment', component: EnvironmentComponent},
+  { path: 'equipment', component: EquipmentComponent},
+  { path: 'teacher', component: TeacherComponent},
+  { path: 'class', component: ClassComponent}
 
-  
 
   // { path: '**', component: ErrorComponent }, --> CRIA COMPONENT ERRO
   // Lembre-se de deixar o scape da rota sempre como último
