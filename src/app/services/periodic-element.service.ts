@@ -14,11 +14,11 @@ export class PeriodicElementService {
     return this.http.get<PeriodicElement[]>(this.elementApiUrl);
   }
 
-  createElements(element: PeriodicElement): Observable<PeriodicElement> {
+  createElements(element: PeriodicElement) {
     return this.http.post<PeriodicElement>(this.elementApiUrl, element);
   }
 
-  editElement(element: PeriodicElement): Observable<PeriodicElement> {
+  editElement(element: PeriodicElement) {
     return this.http.put<PeriodicElement>(this.elementApiUrl, element);
   }
 

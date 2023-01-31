@@ -6,9 +6,6 @@ import { Router } from '@angular/router';
 import { DialogoConfirmacaoComponent } from 'src/app/components/dialogo-confirmacao/dialogo-confirmacao.component';
 import { PeriodicElementService } from 'src/app/services/periodic-element.service';
 
-
-
-
 export interface PeriodicElement {
   name: string;
   position: number;

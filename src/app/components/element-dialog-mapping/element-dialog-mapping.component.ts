@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { PeriodicElement } from 'src/app/pages/mapping/mapping.component';
+import { PeriodicElementMapping } from 'src/app/pages/mapping/mapping.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ElementDialogComponent } from '../element-dialog/element-dialog.component';
 
@@ -9,13 +9,13 @@ import { ElementDialogComponent } from '../element-dialog/element-dialog.compone
   styleUrls: ['./element-dialog-mapping.component.scss']
 })
 export class ElementDialogMappingComponent implements OnInit {
-  element!: PeriodicElement;
+  element!: PeriodicElementMapping;
   isChange!: boolean;
   selected = '';
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: PeriodicElement,
+    public data: PeriodicElementMapping,
     public dialogRef: MatDialogRef<ElementDialogComponent>,
   ) { }
 

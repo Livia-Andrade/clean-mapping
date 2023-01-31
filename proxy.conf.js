@@ -3,7 +3,7 @@ const PROXY_CONFIG = [
         context: ['/log', '/home-user', '/home', '/controller', '/context', '/client', '/mapping', '/base'],
         target: 'http://localhost:8080/',
         secure: false,
-        // logLevel: 'debug'
+        logLevel: 'debug'
     }
 ];
 
