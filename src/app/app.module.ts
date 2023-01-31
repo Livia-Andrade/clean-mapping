@@ -40,8 +40,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { matTooltipAnimations, MatTooltipModule } from '@angular/material/tooltip';
 
+
 //import for calendar
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { ModelComponent } from './pages/model/model.component';
 
 
 //import SIDEBAR
@@ -60,6 +62,7 @@ import { PdfComponent } from './components/pdf/pdf.component';
 import { PeriodicElementService } from './services/periodic-element.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PeriodicElementMappingService } from './services/periodic-element-mapping.service';
+
 
 // import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
 
@@ -80,6 +83,7 @@ import { PeriodicElementMappingService } from './services/periodic-element-mappi
     HomeUserComponent,
     DialogoConfirmacaoComponent,
     PdfComponent,
+    ModelComponent,
  ],
 
   imports: [

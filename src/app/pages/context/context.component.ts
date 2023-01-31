@@ -6,6 +6,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { ModelComponent } from '../model/model.component';
 
 @Component({
   selector: 'app-context',
@@ -15,10 +17,23 @@ import { INITIAL_EVENTS, createEventId } from './event-utils';
 
 
 
-export class ContextComponent  {
+export class ContextComponent implements OnInit {
 
-  title = 'fullCallenderApp';
+  ngOnInit(): void {
+    
+  }
+
+  title: string;
+
   calendarVisible = true;
+  events:  [
+    { title: 'Present', date: "2023-31-01", color: '#red'},
+    { title: 'Absent', date: "2023-31-01", color: '#blue'},
+    { title: 'Present', date: "2023-31-01", color: '#'},
+    { title: 'Absent', date: "2023-31-01", color: '#'},
+  ];
+  
+
   calendarOptions: CalendarOptions = {
     plugins: [
       interactionPlugin,
@@ -27,31 +42,45 @@ export class ContextComponent  {
       listPlugin,
     ],
     headerToolbar: {
-      left: 'prev,next today',
+      left : 'prev,next today', 
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
+   
+
     initialView: 'dayGridMonth',
-    initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
+   
+    initialEvents: INITIAL_EVENTS, // alternativamente, use a configuração 'eventos' para buscar de um feed
     weekends: true,
     editable: true,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
+    
+  
+ 
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
-    /* you can update a remote database when these fire:
+    /* atualizando banco de dados remoto com estes:
     eventAdd:
     eventChange:
     eventRemove:
     */
+    
   };
   currentEvents: EventApi[] = [];
 
-  constructor(private changeDetector: ChangeDetectorRef) {
+  constructor(private changeDetector: ChangeDetectorRef, public dialog: MatDialog) {
   }
 
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(ModelComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
   }
@@ -65,7 +94,7 @@ export class ContextComponent  {
     const title = prompt('Insira o nome do evento que deseja adicionar');
     const calendarApi = selectInfo.view.calendar;
 
-    calendarApi.unselect(); // clear date selection
+    calendarApi.unselect(); // limpar seleção de data
 
     if (title) {
       calendarApi.addEvent({
@@ -88,6 +117,8 @@ export class ContextComponent  {
     this.currentEvents = events;
     this.changeDetector.detectChanges();
   }
+
+  // PDF
 
   @ViewChild ('content', {static: false}) el: ElementRef;
   
