@@ -1,3 +1,7 @@
+import { TeacherComponent } from './pages/teacher/teacher.component';
+import { ClassComponent } from './pages/class/class.component';
+import { EquipmentComponent } from './pages/equipment/equipment.component';
+import { EnvironmentComponent } from './pages/environment/environment.component';
 import { HomeUserComponent } from './pages/home-user/home-user.component';
 
 import { MappingComponent } from './pages/mapping/mapping.component';
@@ -23,9 +27,12 @@ const routes: Routes = [
   { path: 'home-user', component: HomeUserComponent},
   { path: 'delete', component: DialogoConfirmacaoComponent},
   { path: 'pdf', component: PdfComponent},
-  { path: 'model', component: ModelComponent}
+  { path: 'model', component: ModelComponent},
+  { path: 'enviroment', component: EnvironmentComponent},
+  { path: 'equipment', component: EquipmentComponent},
+  { path: 'class', component: ClassComponent},
+  { path: 'teacher', component: TeacherComponent}
 
-  
 
   // { path: '**', component: ErrorComponent }, --> CRIA COMPONENT ERRO
   // Lembre-se de deixar o scape da rota sempre como último

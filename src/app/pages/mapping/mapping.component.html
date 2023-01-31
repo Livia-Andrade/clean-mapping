@@ -22,10 +22,22 @@ BACKGROUND DA PÁGINA  -->
 
     <div class="container">
 
-      <button mat-button style="background-color: #B4E4D3; color:#4f3b56;" (click)="openDialog(null)">Add resource
-      </button>
+        <button mat-button style="background-color: #B4E4D3; color:#4f3b56; margin: 3px;" routerLink="../enviroment"> Enviroment
+        </button>
+        <button mat-button style="background-color: #B4E4D3; color:#4f3b56; margin: 3px;" routerLink="../class"> Class
+        </button>
+        <button mat-button style="background-color: #B4E4D3; color:#4f3b56; margin: 3px;" routerLink="../equipment"> Equipment
+        </button>
+        <button mat-button style="background-color: #B4E4D3; color:#4f3b56; margin: 3px;" routerLink="../mapping"> Dicipline
+        </button>
+        <button mat-button style="background-color: #B4E4D3; color:#4f3b56; margin: 3px;" routerLink="../teacher"> Teacher
+        </button>
+
 
       <div class="pesquisa">
+
+        <button mat-button style="background-color: #B4E4D3; color:#4f3b56;" (click)="openDialog(null)">Add resource
+        </button>
         <p>
           <mat-form-field appearance="legacy">
             <mat-label>Enter your search</mat-label>

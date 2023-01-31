@@ -62,6 +62,10 @@ import { PdfComponent } from './components/pdf/pdf.component';
 import { PeriodicElementService } from './services/periodic-element.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PeriodicElementMappingService } from './services/periodic-element-mapping.service';
+import { EnvironmentComponent } from './pages/environment/environment.component';
+import { TeacherComponent } from './pages/teacher/teacher.component';
+import { EquipmentComponent } from './pages/equipment/equipment.component';
+import { ClassComponent } from './pages/class/class.component';
 
 
 // import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
@@ -84,6 +88,10 @@ import { PeriodicElementMappingService } from './services/periodic-element-mappi
     DialogoConfirmacaoComponent,
     PdfComponent,
     ModelComponent,
+    EnvironmentComponent,
+    TeacherComponent,
+    EquipmentComponent,
+    ClassComponent,
  ],
 
   imports: [
