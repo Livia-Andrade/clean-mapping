@@ -22,7 +22,7 @@ export class PeriodicElementService {
     return this.http.put<PeriodicElement>(this.elementApiUrl, element);
   }
 
-  deleteElement(idUsuario: number): Observable<any> {
-    return this.http.delete<any>(`${this.elementApiUrl}?idUsuario=${idUsuario}`);
+  deleteElement(position: number): Observable<any> {
+    return this.http.delete<any>(`${this.elementApiUrl}?position=${position}`);
   }
 }

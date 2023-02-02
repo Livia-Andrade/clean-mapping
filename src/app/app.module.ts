@@ -66,6 +66,10 @@ import { EnvironmentComponent } from './pages/environment/environment.component'
 import { TeacherComponent } from './pages/teacher/teacher.component';
 import { EquipmentComponent } from './pages/equipment/equipment.component';
 import { ClassComponent } from './pages/class/class.component';
+import { PeriodicElementTeacherService } from './services/periodic-element-teacher.service';
+import { PeriodicElementClassService } from './services/periodic-element-class.service';
+import { PeriodicElementEquipmentService } from './services/periodic-element-equipment.service';
+import { PeriodicElementEnvironmentService } from './services/periodic-element-environment.service';
 
 
 // import { DialogAnimationsComponent } from './mapping/dialog-animations/dialog-animations.component';
@@ -137,7 +141,7 @@ import { ClassComponent } from './pages/class/class.component';
     //import CALENDAR
     FullCalendarModule,
   ],
-  providers: [PeriodicElementService, PeriodicElementMappingService],
+  providers: [PeriodicElementService, PeriodicElementMappingService, PeriodicElementTeacherService, PeriodicElementClassService, PeriodicElementEquipmentService, PeriodicElementEnvironmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
