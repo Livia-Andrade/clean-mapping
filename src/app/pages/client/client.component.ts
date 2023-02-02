@@ -1,4 +1,4 @@
-import { Client } from './../../services/client';
+import { Client } from '../../services/api-models/client';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ElementDialogComponent } from './../../components/element-dialog/element-dialog.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -54,6 +54,8 @@ export class ClientComponent implements OnInit {
 
   }
 
+
+  //Método para o paginator identificar nossos dados
   GetAll(){
     this.periodicElementService.getElements().subscribe(result => {
       this.takedata = result;
@@ -103,6 +105,13 @@ export class ClientComponent implements OnInit {
   editElement(element: Client): void {
     this.openDialog(element);
   }
+
+  //Filtro do Search
+  Filterchange(event:Event){
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 
   /*
   // EDITANDO BOTÃO DE DELETE

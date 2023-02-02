@@ -35,7 +35,7 @@ BACKGROUND DA PÁGINA  -->
       <p>
         <mat-form-field appearance="legacy">
           <mat-label>Enter your search</mat-label>
-          <input matInput placeholder="Ex. Ronaldo">
+          <input matInput placeholder="Ex. Ronaldo" (keyup)="Filterchange($event)">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </p>
