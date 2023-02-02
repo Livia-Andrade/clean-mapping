@@ -1,38 +1,46 @@
 <h1 mat-dialog-title>Import your date</h1>
 <div mat-dialog-content>
+  <div class="btn">
     <mat-form-field appearance="legacy">
         <mat-label>Add title </mat-label>
         <input matInput placeholder="">
     </mat-form-field>
+  </div>
 </div>
 
 
 <!-- btn ações -->
-<div mat-dialog-actions-content>
-    <button mat-button mat-dialog-close style="Background-color:#4f3b56 ; color: white">Events</button>
-    <button mat-button mat-dialog-close cdkFocusInitial style="Background-color:#4f3b56 ; color: white;"> Task</button>
+<div class="btn">
+  <div mat-dialog-actions-content>
+      <button mat-button mat-dialog-close style="Background-color:#4f3b56 ; color: white">Events</button>
+      <button mat-button mat-dialog-close cdkFocusInitial style="Background-color:#4f3b56 ; color: white;"> Task</button>
 
+  </div>
 </div>
 
 <br>
 
 <!--Calendario-->
 
-<mat-form-field color="accent" appearance="fill" style="Background-color:cbcbcb  ; color: white;">
-    <mat-label>Inherited calendar color</mat-label>
-    <input matInput [matDatepicker]="picker1">
-    <!-- <button (click)="openCalendar()">open -->
-    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-    <mat-datepicker #picker1></mat-datepicker>
-</mat-form-field>
+<div class="btn">
+  <mat-form-field color="accent" appearance="fill" style="Background-color:cbcbcb  ; color: white;">
+      <mat-label>Inherited calendar color</mat-label>
+      <input matInput [matDatepicker]="picker1">
+      <!-- <button (click)="openCalendar()">open -->
+      <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+</div>
 
 <br>
 <br>
 
 <!--Usuario-->
-<mat-form-field appearance="legacy">
-    <mat-icon>account_circle<input matInput placeholder=""></mat-icon>
-</mat-form-field>
+<div clas="user">
+  <mat-form-field appearance="legacy" clas="user">
+      <mat-icon>account_circle<input matInput placeholder=""></mat-icon>
+  </mat-form-field>
+</div>
 
 <!--Descrição ou anexo -->
 <div class="form-group">

@@ -12,14 +12,14 @@ export class ModelComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ContextComponent>){}
-  
+
   ngOnInit(): void {
     //tamanho modal
-    this.dialogRef.updateSize('50%', '50%')
+    this.dialogRef.updateSize('30%', '30%')
   }
 
 
 }
-  
+
 
 

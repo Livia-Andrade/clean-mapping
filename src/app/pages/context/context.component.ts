@@ -19,21 +19,8 @@ import { ModelComponent } from '../model/model.component';
 
 export class ContextComponent implements OnInit {
 
-  ngOnInit(): void {
-    
-  }
-
-  title: string;
-
+  public events: any[];
   calendarVisible = true;
-  events:  [
-    { title: 'Present', date: "2023-31-01", color: '#red'},
-    { title: 'Absent', date: "2023-31-01", color: '#blue'},
-    { title: 'Present', date: "2023-31-01", color: '#'},
-    { title: 'Absent', date: "2023-31-01", color: '#'},
-  ];
-  
-
   calendarOptions: CalendarOptions = {
     plugins: [
       interactionPlugin,
@@ -42,34 +29,38 @@ export class ContextComponent implements OnInit {
       listPlugin,
     ],
     headerToolbar: {
-      left : 'prev,next today', 
+      left : 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
-   
+
+
 
     initialView: 'dayGridMonth',
-   
+
     initialEvents: INITIAL_EVENTS, // alternativamente, use a configuração 'eventos' para buscar de um feed
     weekends: true,
     editable: true,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-    
-  
- 
+
+
+
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
-    eventsSet: this.handleEvents.bind(this)
+    eventsSet: this.handleEvents.bind(this),
+
     /* atualizando banco de dados remoto com estes:
     eventAdd:
     eventChange:
     eventRemove:
     */
-    
+
   };
+
   currentEvents: EventApi[] = [];
+  // events: ({ title: string; start: number; description: string; end?: undefined; } | { title: string; start: Date; description: string; end?: undefined; } | { title: string; start: Date; end: Date; description: string; })[];
 
   constructor(private changeDetector: ChangeDetectorRef, public dialog: MatDialog) {
   }
@@ -88,6 +79,7 @@ export class ContextComponent implements OnInit {
   handleWeekendsToggle() {
     const { calendarOptions } = this;
     calendarOptions.weekends = !calendarOptions.weekends;
+
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
@@ -99,10 +91,10 @@ export class ContextComponent implements OnInit {
     if (title) {
       calendarApi.addEvent({
         id: createEventId(),
-        title,
+        title: createEventId(),
         start: selectInfo.startStr,
         end: selectInfo.endStr,
-        allDay: selectInfo.allDay
+        allDay: selectInfo.allDay,
       });
     }
   }
@@ -118,10 +110,31 @@ export class ContextComponent implements OnInit {
     this.changeDetector.detectChanges();
   }
 
+  ngOnInit() {
+  this.events = [
+    {
+      title: "Evento 1",
+      start: new Date().getTime(),
+      description: "evento 1"
+    },
+    {
+      title: "Evento 2",
+      start: new Date(new Date().getTime() + 86400000),
+      description: "evento 2"
+    },
+    {
+      title: "Evento 3",
+      start: new Date(new Date().getTime() + (86400000 * 2)),
+      end: new Date(new Date().getTime() + (86400000 * 3)),
+      description: "evento 2"
+    },
+  ]
+  }
+
   // PDF
 
   @ViewChild ('content', {static: false}) el: ElementRef;
-  
+
   printSimplePDF() {
     const doc = new jsPDF();
     doc.text("A implementar!", 10, 10);
