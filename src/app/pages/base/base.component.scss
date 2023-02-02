@@ -1,0 +1,252 @@
+
+/* Config */
+$color-bg: #4f3b56;
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 200s;
+
+/* mixins */
+@function particles($max) {
+  $val: 0px 0px $color-particle;
+
+  @for $i from 1 through $max {
+    $val: #{$val},
+    random($spacing)+px random($spacing)+px $color-particle;
+  }
+
+  @return $val;
+}
+
+@mixin particles($max) {
+  box-shadow: particles($max);
+  border-radius: 50%;
+}
+
+/* Styles */
+html,
+body {
+  height: 100%;
+}
+
+.page-bg,
+.animation-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page-bg {
+  background-blend-mode: screen;
+  background-size: cover;
+  // filter: grayscale(100%);
+  z-index: -1;
+}
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  @include particles(1000);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-1:after {
+  @include particles(900);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  @include particles(800);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(500);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3:after {
+  @include particles(1100);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  @include particles(1200);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+  @include particles(700);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY($spacing * -1);
+  }
+}
+.page-wrapper {
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+}
+
+.example-button{
+	border: none;
+	color: rgb(160, 7, 7);
+	width: 15px;
+	background-color: white;
+	cursor: pointer;
+}
+
+.container {
+	width: 95vw;
+	height: 89vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 7rem;
+	padding: 0 2rem;
+}
+
+.img {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.login-content {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+.img img {
+	width: 500px;
+}
+
+form {
+	width: 360px;
+}
+
+.login-content img {
+	width: 200px;
+}
+
+
+
+.login-content .input-div.one {
+	margin-top: 0;
+}
+
+.i {
+	color: #bb00ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.input-div>div {
+	position: relative;
+	height: 45px;
+}
+
+
+.btn {
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #4F3B56, #B4E4D3, #B4E4D3);
+	background-size: 200%;
+	font-size: .7rem;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.btn:hover {
+	background-position: right;
+}
+
+
+@media screen and (max-width: 1050px) {
+	.container {
+		grid-gap: 5rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	form {
+		width: 290px;
+	}
+
+	.login-content h2 {
+		font-size: 2.4rem;
+		margin: 8px 0;
+	}
+
+	.img img {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
+
+	.img {
+		display: none;
+	}
+
+	.wave {
+		display: none;
+	}
+
+	.login-content {
+		justify-content: center;
+	}
+}

@@ -1,0 +1,102 @@
+<body>
+
+  <div class="page-bg"></div>
+  <div class="animation-wrapper">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+  </div>
+
+  <mat-toolbar style="background-color: #B4E4D3; height: 60px; color:#4f3b56;">
+    <span class="fill-remaining-space"></span>
+    <span style="margin-left: 3%; font-weight: bold;"> User Registration </span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+
+
+  <form [formGroup]="cadForm" (ngSubmit)="submit()" #formDir="ngForm">
+    <div class="container">
+
+      <div class="img">
+        <img src="../../../assets/Images/pagecentral.png" alt="" />
+      </div>
+
+      <div class="login-content">
+
+
+        <div class="login">
+          <img src="../../../assets/Images/Logo.png" alt="" />
+
+          <label for="Cadastramento de novo usuario"> </label>
+          <p>
+            <mat-form-field appearance="fill" style="width: 350px;">
+              <mat-label>Name</mat-label>
+              <input id="name" matInput placeholder="Nome Completo" maxlength="55" minlength="10">
+              <mat-icon matSuffix style="color: #4F3B56;">assignment</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </p>
+
+          <div *ngIf="Name.invalid && formDir.submitted" class="validation-error">
+            <mat-error *ngIf="Name.errors?.['required']">
+              Fill in the field correctly
+            </mat-error>
+          </div>
+
+          <p>
+            <mat-form-field appearance="fill" style="width: 350px;">
+              <mat-label>CPF</mat-label>
+              <input id="cpf" matInput placeholder="CPF" maxlength="11" minlength="6">
+              <mat-icon matSuffix style="color: #4F3B56;">fingerprint</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </p>
+
+
+          <div *ngIf="Cpf.invalid && formDir.submitted" class="validation-error">
+            <mat-error *ngIf="Cpf.errors?.['required']">
+              Fill in the field correctly
+            </mat-error>
+          </div>
+
+          <p>
+            <mat-form-field appearance="fill" style="width: 350px;">
+              <mat-label>Username</mat-label>
+              <input id="Username" matInput placeholder="Nickname" maxlength="10" minlength="5">
+              <mat-icon matSuffix style="color: #4F3B56;">perm_identity</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </p>
+
+          <div *ngIf="Username.invalid && formDir.submitted" class="validation-error">
+            <mat-error *ngIf="Username.errors?.['required']">
+              Fill in the field correctly
+            </mat-error>
+          </div>
+
+
+          <mat-form-field appearance="fill" style="width: 350px;">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" maxlength="20">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon style="color: #4F3B56;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+
+          <div *ngIf="Password.invalid && formDir.submitted" class="validation-error">
+            <mat-error *ngIf="Password.errors?.['required']">
+              Fill in the field correctly
+            </mat-error>
+          </div>
+
+
+
+          <input type="submit" class="btn" value="Register User">
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

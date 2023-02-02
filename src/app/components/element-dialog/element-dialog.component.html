@@ -1,0 +1,59 @@
+<!-- CAIXA DE ELEMENTO DO GERENCIAMENTO DE USUARIO -->
+
+<!-- BTN PARA ADD USER -->
+<h1 *ngIf="!isChange" mat-dialog-title>
+  Adicionar novo usuario {{ data.name }}
+</h1>
+
+<!-- BTN PARA EDITAR USER -->
+<h1 *ngIf="isChange" mat-dialog-title>Editar usuario {{ data.name }}</h1>
+
+<div mat-dialog-content>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> ID </mat-label>
+    <input matInput [(ngModel)]="data.position" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> NOME </mat-label>
+    <input matInput [(ngModel)]="data.name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> USERNAME </mat-label>
+    <input matInput [(ngModel)]="data.description" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> CPF </mat-label>
+    <input matInput [(ngModel)]="data.symbol" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> SENHA </mat-label>
+    <input matInput [(ngModel)]="data.password" />
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+
+  <!-- CANCELAR ALTERAÇÕES -->
+  <button mat-button (click)="onCancel()" style="background-color: rgb(141, 26, 26); color: aliceblue">
+    Cancel
+  </button>
+
+  <!-- CRIAR NOVO USUARIO -->
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial
+    style="background-color: rgb(38, 100, 38); color: white">
+    Criar
+  </button>
+
+  <!-- EDITAR USUARIO -->
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial
+    style="background-color: rgb(38, 100, 38); color: white">
+    Editar
+  </button>
+
+</div>

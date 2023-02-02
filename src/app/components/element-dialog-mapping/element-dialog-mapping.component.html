@@ -1,0 +1,61 @@
+<!-- CAIXA DE ELEMENTO DO GERENCIAMENTO DE RECURSO -->
+
+<h1 *ngIf="!isChange" mat-dialog-title>
+  Add new resource {{ data.name }}
+</h1>
+
+<h1 *ngIf="isChange" mat-dialog-title>Edit resource {{ data.name }}</h1>
+
+<div mat-dialog-content>
+
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label>Select resource</mat-label>
+    <mat-select [(value)]="selected">
+      <!-- AMBIENTE -->
+      <mat-option value="option1">Environment</mat-option>
+      <!-- Diciplina -->
+      <mat-option value="option2">Discipline</mat-option>
+      <!-- Docente -->
+      <mat-option value="option3">Teacher</mat-option>
+      <!-- Equipamento -->
+      <mat-option value="option4">Equipment</mat-option>
+      <!-- Turma -->
+      <mat-option value="option5">Class</mat-option>
+      <input matInput [(ngModel)]="data.recurso" />
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> ID </mat-label>
+    <input matInput [(ngModel)]="data.position" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> NAME </mat-label>
+    <input matInput [(ngModel)]="data.name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> NUMBER </mat-label>
+    <input matInput [(ngModel)]="data.number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label> DESCRIPTION </mat-label>
+    <input matInput [(ngModel)]="data.symbol" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()" style="background-color: rgb(141, 26, 26); color: aliceblue">
+    Cancel
+  </button>
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial
+    style="background-color: rgb(38, 100, 38); color: white">
+    Create
+  </button>
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial
+    style="background-color: rgb(38, 100, 38); color: white">
+    To edit
+  </button>
+</div>

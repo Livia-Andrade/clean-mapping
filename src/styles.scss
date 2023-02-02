@@ -1,0 +1,44 @@
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// Layout of project
+
+// Container devices
+$container-xl: 1216px;
+$container-l: 1140px;
+$container-m: 688px;
+$container-s: 540px;
+
+// Mixins of media queries
+@mixin responsive($device) {
+  @if $device == xl {
+    // For resolutions upper than 1440px
+    @media screen and (min-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == l {
+    // For resolutions between 1140px
+    @media screen and (max-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == m {
+    // For resolutions between 960px
+    @media screen and (max-width: $container-l) {
+      @content;
+    }
+  } @else if $device == s {
+    // For resolutions less than 960px
+    @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } @else if $device == xs {
+    // For resolutions less than 540px
+    @media screen and (max-width: $container-s) {
+      @content;
+    }
+  }
+}
+

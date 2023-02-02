@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button mat-button class="user-m" [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="imagem do user" class="user-image mr-1 p-2" />
+
+            User Name
+            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <a routerLink="/log" routerLinkActive="menu-item-icon" style="text-decoration: none; color: rgb(0, 0, 0); ">
+                <mat-icon style="color: black; ">exit_to_app</mat-icon>
+                Logout
+              </a>
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

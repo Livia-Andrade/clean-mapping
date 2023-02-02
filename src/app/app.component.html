@@ -1,0 +1,11 @@
+<mat-drawer-container>
+    <app-log></app-log>
+    <mat-drawer mode="side" [opened]="sideBarOpen" *ngIf="router.url !== '/log' && router.url !== '/home' && router.url !== '/home-user' ">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+      <app-layout></app-layout>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-command (toggleSidebarForMe)="sideBarToggler()" *ngIf="router.url !== '/log' && router.url !== '/home' && router.url !== '/home-user' "></app-command>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>

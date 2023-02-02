@@ -1,0 +1,59 @@
+<!--BACKGROUND DA PÁGINA  -->
+
+<div class="page-bg"></div>
+
+<div class="animation-wrapper">
+  <div class="particle particle-1"></div>
+  <div class="particle particle-2"></div>
+  <div class="particle particle-3"></div>
+  <div class="particle particle-4"></div>
+</div>
+
+<div class="content">
+  <mat-toolbar style="background-color: #4f3b56; height: 60px; color: white;">
+    <span class="fill-remaining-space"></span>
+    <span> Resource Grid </span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+
+  <div class="header">
+
+    <button class="button" (click)="printPDF()">
+      <!-- <script>alert("ERROR");</script> -->
+      <mat-icon style="color: #eaf9ff; width: 35px;">picture_as_pdf</mat-icon>
+    </button>
+
+     <!-- <button mat-button class="btn-add" routerLink="/model">
+        <mat-icon style="color: #eaf9ff; width: 35px;">add</mat-icon>
+      </button> -->
+
+
+      <button mat-raised-button (click)="openDialog('0ms', '0ms')"><mat-icon style="color: #eaf9ff; width: 35px;">add</mat-icon></button>
+
+
+      <button mat-button class="btn-edit">
+        <mat-icon style="color: #eaf9ff; width: 35px;">edit</mat-icon>
+      </button>
+
+
+    <!-- BARRA DE PESQUISA -->
+
+    <div class="pesquisa" style="float: right;">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Enter your search</mat-label>
+          <input matInput placeholder="Ex. 3DI">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <div class='demo-app-main'>
+    <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
+      <ng-template #eventContent let-arg>
+        <b>{{ arg.timeText }}</b>
+        <i>{{ arg.event.title }}</i>
+      </ng-template>
+    </full-calendar>
+  </div>

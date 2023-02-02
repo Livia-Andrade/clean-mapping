@@ -1,0 +1,70 @@
+<!-- PÁGINA DE LOGIN -->
+
+<body>
+  <form [formGroup]="momentForm" (ngSubmit)="submit()" #formDir="ngForm">
+
+    <div class="container">
+
+      <div class="img">
+        <img src="../../../assets/Images/log.png" alt="" />
+      </div>
+
+      <div class="login-content">
+
+        <div class="login">
+
+          <img src="../../../assets/Images/Logo.png" alt="" />
+          <label for="Login"> </label>
+
+          <!-- NOME DE USER -->
+          <div class="input-div one">
+
+            <div class="i">
+              <mat-icon>people</mat-icon>
+            </div>
+
+            <div class="div">
+              <input id="Name" type="text" placeholder="Username" formControlName="Name" maxlength="6"
+                minlength="6" />
+            </div>
+
+          </div>
+
+          <div *ngIf="Login.invalid && formDir.submitted" class="validation-error">
+            <mat-error *ngIf="Login.errors?.['required']">
+              Fill in the Login field correctly
+            </mat-error>
+          </div>
+
+          <!-- SENHA -->
+          <div class="input-div pass">
+
+            <div class="i">
+              <mat-icon>lock</mat-icon>
+            </div>
+
+            <div class="div" style="display: flex;">
+              <input id="Password" type="password" placeholder="Password" formControlName="Password" maxlength="16"
+                minlength="6" />
+
+              <button mat-raised matTooltip="If you forget your password, please contact the secretary"
+                matTooltipClass="example-tooltip-uppercase" aria-label="Button that shows a red tooltip"
+                class="example-button">
+                <mat-icon>error</mat-icon>
+              </button>
+
+            </div>
+          </div>
+
+          <div *ngIf="Password.invalid && formDir.submitted" class="validation-error">
+            <mat-error *ngIf="Password.errors?.['required']">
+              Fill in the password field correctly
+            </mat-error>
+          </div>
+
+          <input type="submit" class="btn" value="Login" routerLink="/home">
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

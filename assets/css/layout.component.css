@@ -1,0 +1,68 @@
+body {
+  padding: 10px;
+  position: cover;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+mat-sidenav-container {
+  height: 90vh;
+}
+
+mat-sidenav {
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  align-items: center;
+  align-content: space-between;
+  justify-content: center;
+}
+
+.ct-perfil {
+  display: flex;
+  padding: 5px;
+  margin: 6px;
+  text-align: center;
+}
+
+.ct-perfil .box {
+  font-weight: bold;
+  padding: 3px;
+  margin: 5px;
+}
+
+.mat-list-item a {
+  text-decoration: none;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 7px;
+  justify-content: flex-start;
+}
+
+.hr {
+  border: 1px #7f7f7f solid;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mat-list-item a:hover {
+  font-weight: bold;
+  color: rgb(131, 82, 220);
+  background: #f1f1f1;
+}
+
+mat-icon {
+  font-size: 20px;
+  margin: 0 15px;
+  color: #fff;
+  width: 30px;
+}
+
+.i {
+  display: flex;
+  width: 80%;
+  background: transparent;
+}/*# sourceMappingURL=layout.component.css.map */

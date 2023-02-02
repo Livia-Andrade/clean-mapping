@@ -1,0 +1,7 @@
+[
+
+    { "position": 1, "name": "Kleber", "description": "Professor", "symbol": "Backend", "password": "123" },
+
+    { "position": 2, "name": "João", "description": "Professor", "symbol": "Banco de dados", "password": "123" }
+
+  ]
